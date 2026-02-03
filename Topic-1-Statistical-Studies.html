@@ -250,7 +250,7 @@ mjx-container[jax="SVG"][display="true"]{
 <div class="frontmatter">
 <div class="title"><h1>Topic 1: Statistical Studies</h1></div>
 <div class="author"><h2>Fei Ye</h2></div>
-<div class="date"><h3>January 2026</h3></div>
+<div class="date"><h3><code>r format(Sys.time(), '%B %Y')</code></h3></div>
 </div>
 <div class="body">
 <h2 id="sec:references" class="unnumbered">References</h2>
@@ -396,7 +396,7 @@ mjx-container[jax="SVG"][display="true"]{
 <p><strong>Answer:</strong></p>
 <ol>
 <li>A variable in the study is students do-over choice. It is categorical variable.</li>
-<li>A data set is the collection of do-over choice of some or all students being surveyed. The data set would be univariate.</li>
+<li>A data set is the collection of do-over choice of some or all students being surveyed. The data set is univariate.</li>
 </ol>
 </div>
 </div>
@@ -452,7 +452,7 @@ mjx-container[jax="SVG"][display="true"]{
 <hr />
 <h2 id="sec:practice-observational-vs-experimental-ii" class="unnumbered">Practice: Observational vs Experimental II</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&amp;seed=2024&amp;showansafter" width="100%" height="500px" data-external="1" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
 <h2 id="sec:questions-about-population-1-of-2"><span class="section-number main-number">9</span> Questions about Population (1 of 2)</h2>
@@ -534,7 +534,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 <p><strong>Answer:</strong> The conclusion claims a cause-and-effect relationship. To answer the question, we need an experimental study. However, the study has no control on data which makes it inappropriate.</p>
 <hr />
 <h2 id="sec:practice-cause-and-effect-or-correlation" class="unnumbered">Practice: Cause-and-Effect or Correlation</h2>
-<p>Does higher education attainment lead to higher salary?</p>
+<p>Do individuals with higher educational attainment tend to earn higher salaries?</p>
 <ol>
 <li>Determine if the question is a cause-and-effect question?</li>
 <li>What are the explanatory and response variables?</li>
@@ -543,7 +543,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 <hr />
 <h2 id="sec:practice-correlation-or-causation" class="unnumbered">Practice: Correlation or Causation</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&amp;seed=2024&amp;showansafter" width="100%" data-external="1" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
 <h2 id="sec:sampling-plans"><span class="section-number main-number">14</span> Sampling Plans</h2>
@@ -724,52 +724,35 @@ Teachers and students do not know which version is “new” vs. “standard” 
 <ul>
 <li>
 <p>A confounding variable has at least a partial effect on the response variable.</p>
+</li>
+<li>
 <p><strong>Example:</strong> In the study of the relation between a type fertilizer and tomato size, the amount of sunshine will be a confounding variable. It contributes to the growth of tomato.</p>
 </li>
 <li>
 <p>A lurking variable is an unseen (unmeasured) third variable that is a common response to an apparent association between the explanatory and response variables</p>
+</li>
+<li>
 <p><strong>Example:</strong> People find that there is a positive association between number of firefighters and amount of damage. However, both are affected the size of fire.</p>
 </li>
 </ul>
 <p>Both confounding and lurking variables are extraneous variables which are variable other than the explanatory variables that may have an effect on the response variable.</p>
 <hr />
-<h2 id="sec:example-experimental-design-amp-conclusion"><span class="section-number main-number">22</span> Example: Experimental Design &amp; Conclusion</h2>
-<p>A coach wants to know whether listening to music helps runners complete a mile faster. She recruits 30 runners from the school’s track team and randomly assigns them to two groups:</p>
-<p>15 runners run the mile while listening to music, and
-15 runners run the mile with no music.</p>
-<p>Both groups run on the same track, on the same day, under similar weather conditions. After recording the times, the runners who listened to music finish faster on average. The coach concludes that listening to music will always make all runners run faster.</p>
-<ul>
-<li>Is this study appropriate? Why or why not?</li>
-<li>Is the conclusion appropriate? Why or why not?</li>
-</ul>
-<p><strong>Answer:</strong></p>
-<ul>
-<li>
-<p>Yes. This is a randomized controlled experiment. The design supports a cause‑and‑effect claim within this specific setting.</p>
-</li>
-<li>
-<p>No. The claim (“always,” “all runners”) is too broad. The study can not guarantee the same effect for all runners, distances, music types, or conditions.</p>
-</li>
-</ul>
 <h2 id="sec:practice-principles-of-experimental-design" class="unnumbered">Practice: Principles of Experimental Design</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&amp;seed=2024&amp;showansafter" width="100%" height="500px" data-external="1" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
 <h2 id="sec:practice-experimental-design" class="unnumbered">Practice: Experimental Design</h2>
 <p>There is an ongoing debate about how many spaces should be placed after a period in typed documents. Alana read about a study where 100 participants all read the same document typed in Courier New font. Half of the participants were randomly assigned the document with one space after each period, and the other half were given the document with two spaces after each period.</p>
 <p>Participants who read the document with two spaces after each period were able to finish reading significantly faster than those with one space after each period. Alana concluded that using two spaces after each period will help people read all documents faster.</p>
-<ul>
-<li>Is the study appropriate? Why or why not?</li>
-<li>Is Alana’s conclusion appropriate? Why or why not?</li>
-</ul>
+<p>Is this study appropriate? Why?</p>
 <div class="footmark">
 <p>Source: <a href="https://www.khanacademy.org/math/ap-statistics/gathering-data-ap/statistics-experiments/e/issues-experiments">Khan Academy</a></p>
 </div>
 <hr />
 <h2 id="sec:practice-confounding-variable-definition" class="unnumbered">Practice: Confounding Variable Definition</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&amp;seed=2024&amp;showansafter" width="100%" height="500px" data-external="1" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
 <!--# class="middle center"-->
@@ -777,16 +760,16 @@ Teachers and students do not know which version is “new” vs. “standard” 
 <p>Lab Instructions in Excel</p>
 </div>
 <hr />
-<h2 id="sec:introduction-to-excel-spreadsheets"><span class="section-number main-number">23</span> Introduction to Excel Spreadsheets</h2>
+<h2 id="sec:introduction-to-excel-spreadsheets"><span class="section-number main-number">22</span> Introduction to Excel Spreadsheets</h2>
 <div class="iframecontainer">
-<iframe style="width=100%" src="Lab-1.html" loading="lazy" allowfullscreen></iframe>
+<iframe style="width=100%" src="Lab-1.html"></iframe>
 </div>
 <div class="footmark">
 <p><a target="_blank" href="Lab-1.html" >Click the link to open in a new window.
 </a></p>
 </div>
 <hr />
-<h2 id="sec:random-numbers-by-excel"><span class="section-number main-number">24</span> Random Numbers by Excel</h2>
+<h2 id="sec:random-numbers-by-excel"><span class="section-number main-number">23</span> Random Numbers by Excel</h2>
 <ul>
 <li><code>=RAND()</code> returns a random real number greater than or equal to 0 and less than 1.  To generate a random real number between \(a\) and \(b\), one can use <code>=RAND()*(b-a)+a</code>.</li>
 <li><code>=RANDBETWEEN(bottom, top)</code> returns an integer between <code>bottom</code> and <code>top</code>.</li>
@@ -799,7 +782,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </ul>
 </div>
 <hr />
-<h2 id="sec:example-usage-of-rand"><span class="section-number main-number">25</span> Example: Usage of <code>RAND()</code></h2>
+<h2 id="sec:example-usage-of-rand"><span class="section-number main-number">24</span> Example: Usage of <code>RAND()</code></h2>
 <p>Randomly generate a number between 0 and 1.</p>
 <p><strong>Howto:</strong></p>
 <ul>
@@ -818,7 +801,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </ul>
 <p>Alternatively, you may also manually enter the function: <code>=rand()</code> in the cell and hit enter.</p>
 <hr />
-<h2 id="sec:example-usage-of-randbetween"><span class="section-number main-number">26</span> Example: Usage of <code>RANDBETWEEN()</code></h2>
+<h2 id="sec:example-usage-of-randbetween"><span class="section-number main-number">25</span> Example: Usage of <code>RANDBETWEEN()</code></h2>
 <p>Generate 10 random integers of 2 digits.</p>
 <p><strong>Howto:</strong></p>
 <ul>
@@ -833,7 +816,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-usage-of-randarray"><span class="section-number main-number">27</span> Example: Usage of <code>RANDARRAY()</code></h2>
+<h2 id="sec:example-usage-of-randarray"><span class="section-number main-number">26</span> Example: Usage of <code>RANDARRAY()</code></h2>
 <p>Generate 10 random integers of 2 digits without repetition.</p>
 <p><strong>Howto:</strong></p>
 <p>In the cell with 9 empty cells below it, say <code>A1</code>, apply the Excel function <code>=UNIQUE(RANDARRAY(10, 1, 10, 99, TRUE))</code>. You will get a column array of 10 integers without duplication.</p>
@@ -851,7 +834,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </li>
 </ol>
 <hr />
-<h2 id="sec:install-the-analysis-toolpak-optional"><span class="section-number main-number">28</span> Install the Analysis ToolPak (Optional)</h2>
+<h2 id="sec:install-the-analysis-toolpak-optional"><span class="section-number main-number">27</span> Install the Analysis ToolPak (Optional)</h2>
 <p>If you have a desktop version Excel, you may install the Excel add-in, Analysis Toolpak which is frequently used for analyzing data.</p>
 <ul>
 <li>

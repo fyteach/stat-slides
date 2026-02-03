@@ -233,7 +233,7 @@ Source: [Khan Academy](https://www.khanacademy.org/math/probability/study-design
 ## Practice: Observational vs Experimental II {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 :::
 
 ---
@@ -298,7 +298,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 
 ## Practice: Cause-and-Effect or Correlation {.unnumbered}
 
-Does higher education attainment lead to higher salary?
+Do individuals with higher educational attainment tend to earn higher salaries?
 
 1. Determine if the question is a cause-and-effect question?  
 2. What are the explanatory and response variables?  
@@ -309,7 +309,7 @@ Does higher education attainment lead to higher salary?
 ## Practice: Correlation or Causation {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 :::
 
 ---
@@ -366,7 +366,7 @@ Determine the type of sampling method.
 
 ---
 
-## Common Types of Selection Bias in Sampling
+## Common Types of Biased Sampling
 
 - **Voluntary Response Bias / Self-Selection Bias:** participants can choose whether to participate in the study.
   Example: "non-scientific" polls taken on television or websites
@@ -409,6 +409,29 @@ Click the link to open the practice in a new window.
 
 ## Elements of Experimental Design (1 of 2)
 
+**Goal of control:** Reduce the effect of other variables (not the treatment) on the outcome. These other variables are called **extraneous** or **confounding** variables.
+
+**Control strategies:**
+
+- **Control group:** A baseline group that gets no treatment or a standard/neutral treatment.
+
+  **Purpose:** To compare against the treatment group.
+
+- **Placebo:** A fake treatment with no active ingredient.
+
+  **Placebo effect:** When participants feel better because they believe they got a real treatment.
+
+- **Blinding:** Keep people unaware of which treatment they receive.
+
+  - **Single-blind:** Participants do not know their group.
+  - **Double-blind:** Participants and researchers who interact with them or measure outcomes do not know the groups.
+
+  **Purpose:** Prevent bias in behavior, reporting, and measurement.
+
+
+**Why control helps:** It isolates the effect of the treatment so we can make a fair comparison.
+
+<!-- 
 - **Control** reduces the effects of variables other than the explanatory variables and the response variables, known as extraneous variables.
 
 - Three control strategies are control groups, placebos, and blinding.
@@ -417,12 +440,41 @@ Click the link to open the practice in a new window.
 
   - A neutral treatment that has no "real" effect on the dependent variable is called a **placebo**, and a participant's positive response to a placebo is called the **placebo effect**.
 
-  - **Blinding** is the practice of not telling participants whether they are receiving a placebo. **Double-blinding** is the practice of not telling both the participants and the researchers which group receiving a treatment or a placebo.
+  - **Blinding** is the practice of not telling participants whether they are receiving a placebo. **Double-blinding** is the practice of not telling both the participants and the researchers which group receiving a treatment or a placebo. -->
 
 ---
 
 ## Elements of Experimental Design (2 of 2)
 
+
+- **Randomization (random assignment):** Assign participants to groups by chance.
+
+  - **Purpose:** Make groups similar on average in both seen and unseen factors.
+  - **Result:** Differences in outcomes are more likely due to the treatment, not pre‑existing differences.
+
+
+
+- **Replication:** Use enough units in each group, and (ideally) repeat the study.
+ 
+  - Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.  
+ 
+  - Any good experiment should be reproducible, and in particular, replication should yield similar results.
+
+
+
+- **Blocking:** Group similar units before assignment, then randomize within each block.
+
+  - **Purpose:** Control known sources of variation (e.g., age, class period, prior skill).
+  - **When to block:** If a factor is strongly related to the outcome and is known in advance.
+
+
+**Mini‑example (education):** Goal: Test a new reading app.
+
+Block by class period (morning vs. afternoon).
+Within each block, randomly assign students to app or no app.
+Use many students per group.
+Teachers and students do not know which version is “new” vs. “standard” (blinding, if possible).
+<!-- 
 - **Randomization** ensures that this estimate is statistically valid.
 
   - With random assignment, we can be fairly confident that any differences we observe in the response of treatment groups is due to the explanatory variable.
@@ -431,6 +483,8 @@ Click the link to open the practice in a new window.
 
   - Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.  
   - Any good experiment should be reproducible, and in particular, replication should yield similar results.
+
+- **Blocking** is grouping experimental units with similar characteristics and randomizing treatments within those groups to control for variability. -->
 
 ---
 
@@ -451,7 +505,7 @@ Both confounding and lurking variables are extraneous variables which are variab
 ## Practice: Principles of Experimental Design {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 :::
 
 ---
@@ -473,7 +527,7 @@ Source: [Khan Academy](https://www.khanacademy.org/math/ap-statistics/gathering-
 ## Practice: Confounding Variable Definition {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 :::
 
 ---
