@@ -137,71 +137,65 @@ table thead th { padding: 0 0.25em; }
    ========================================================= */
 
 /* Make each slide a flex column that fills the viewport */
-.slide {
+.slide {                        /* NEW/CHANGED */
   max-width: 100vw;
-  height: 100vh;               /* slide fills viewport height */
-  display: flex !important;    /* flex container */
-  flex-direction: column;      /* vertical stacking */
+  height: 100vh;               /* NEW: slide fills viewport height */
+  display: flex !important;    /* NEW: make it a flex container */
+  flex-direction: column;      /* NEW: vertical stacking */
   position: relative;          /* keeps .footmark absolute positioning sane */
   box-sizing: border-box;
 }
 
-/* Header & footer take natural height */
-.slide > .header,
-.slide > .footer {
-  flex: 0 0 auto;
+/* Let headings/paragraphs keep natural height */
+.slide h1, .slide h2, .slide h3,
+.slide p, .slide ul, .slide ol,
+.slide .row, .slide .part {
+  flex: 0 0 auto;              /* NEW: prevent these from growing */
 }
 
-/* Main content becomes a flex column and fills the middle */
-.slide > .main {
-  flex: 1 1 auto;              /* take space between header and footer */
-  min-height: 0;               /* allow children to shrink if needed */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Let headings/paragraphs inside main keep natural height */
-.slide .main h1, .slide .main h2, .slide .main h3,
-.slide .main p, .slide .main ul, .slide .main ol,
-.slide .main .row, .slide .main .part {
-  flex: 0 0 auto;
-}
-
-/* Container that fills remaining space for the iframe */
-.iframecontainer {
-  flex: 1 1 auto;              /* take the leftover height */
-  min-height: 0;               /* allow shrinking within slide */
+/* Container that should fill remaining space for the iframe */
+.iframecontainer {             /* CHANGED */
+  flex: 1 1 auto;              /* NEW: take the leftover height */
+  min-height: 0;               /* NEW: allow shrinking within slide */
   display: flex;
   flex-direction: column;
   gap: 0.4rem;                 /* optional spacing inside */
-  height: auto;                /* override any fixed heights */
 }
 
 /* Default iframe behavior: fill the container */
-.iframecontainer iframe {
+.iframecontainer iframe,       /* NEW: target iframe inside container */
+iframe {
   border: none;
   flex: 1 1 auto;
-  min-height: 0;               /* critical for proper flex shrink */
+  min-height: 0;               /* NEW: critical for proper flex shrink */
   width: 100%;
-  /* height is governed by flex; avoid fixed height attributes in HTML */
+  /* height is auto via flex; if a strict height is needed, uncomment next line */
+  /* height: 100%; */
 }
 
-/* If you *really* want a zoomed effect, apply .zoom-125 to the container. */
+/* Remove hard-coded 75vh; flex handles it now */
+.iframecontainer { height: auto; }  /* NEW override */
+
+/* If you *really* want a zoomed effect, apply .zoom-125 to the container.
+   This keeps the layout stable—use sparingly; may be blurry on some screens. */
 .zoom-125 {
-  overflow: auto;              /* scroll if scaled content exceeds bounds */
+  overflow: auto;              /* scroll if the scaled content exceeds bounds */
 }
 .zoom-125 > iframe {
   transform: scale(1.25);
   transform-origin: top left;
-  /* Compensate for scale so the visible area roughly matches container */
-  width: 80%;                  /* 100% / 1.25 ≈ 80% */
+  /* Ensure the iframe’s layout box still reserves full area for pointer events.
+     We artificially enlarge the effective size when scaled. */
+  width: 80%;                  /* 100% / 1.25 ≈ 80% to compensate scale */
   height: 80%;
 }
 
-/* IMPORTANT: No global transform on MyOpenMath iframes.
-   Flex fill is cleaner and avoids blurriness/overflow. */
-iframe[src^="https://www.myopenmath.com"] {
-  max-width: 100%;             /* keep full width */
+/* IMPORTANT: Remove previous global scaling for MyOpenMath iframes.
+   Scaling here caused overflow/cropping. Flex fill is cleaner. */
+iframe[src^="https://www.myopenmath.com"] {   /* CHANGED */
+  max-width: 100%;            /* keep full width */
+  /* Removed transform scaling */
+  /* If you want specific styling for MyOpenMath, add here without transforms */
 }
 
 .small { font-size: 60%; }
