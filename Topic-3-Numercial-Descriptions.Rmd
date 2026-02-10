@@ -44,8 +44,9 @@ load("Data-Frames-SUNY-Concepts-in-Statistics/actor.RData")
 
 - The **second quartile** $Q_2$ of a data set is the median. The **first (lower) quartiles** $Q_1$ is the median of the lower half of the data set. The **third (upper) quartile** $Q_3$ is the median of the upper quartile.
 - The **Interquartile Range (IQR for short)** of a data set is the difference of the third and the first quartiles: $\text{IQR}=\text{upper quartile} - \text{lower quartile}$.
-- An **outlier** is an observation that is more than $1.5\text{IQR}$ away from the nearest quartile.
-- An outlier is an **extreme outlier** if it is more than $3\text{IQR}$ from the nearest quartile and it is a **mild outlier** otherwise.
+- The values $\text{Fence}_L = Q_1 - 1.5\text{IQR}$ and $\text{Fence}_R = Q_1 - 1.5\text{IQR}$ are called the lower and upper fences for outliers.
+- A mild **outlier** (or simply an outlier) is an observation that is more than $1.5\text{IQR}$ away from the nearest quartile, that is outside the interval $[\text{Fence}_L, \text{Fence}_R]$.
+- An **extreme outlier** is an obervation that is more than $3\text{IQR}$ from the nearest quartile.
 - The minimum, $Q_1$, $Q_2$, $Q_3$ and maximum are known as the "**five-number summary**" of the data set.
 
 ---
@@ -78,7 +79,7 @@ cat(paste(as.vector(head(trees$Height,15)), collapse=", "))
 ## Practice: Five-number Summary, Range and IQR {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=899254&seed=2020&showansafter', height="550px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=899254&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 899254"></iframe>
 :::
 
 ---
@@ -121,8 +122,7 @@ cat(paste(sort(actor_age$Age), collapse=", "))
 
 - Based on the five-number summary, the boxplot is shown below.
 
-
-```{r echo=FALSE, results = 'asis', fig.width=14, fig.asp=0.5, fig.align="center"}
+```{r BoxplotBestOscar, echo=FALSE, results = 'asis', fig.width=14, fig.asp=0.5, fig.align="center", fig.cap=""}
 boxplot<-ggplot(actor_age, aes(x="", y=Age)) +
   # stat_boxplot(geom = "errorbar") +
   geom_boxplot(outlier.size=5) +
@@ -147,7 +147,7 @@ ggplotly(boxplot)
 ## Practice: Five-Number Summary from the Boxplot {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=899261&seed=5824&showansafter&height=550px&frame_id=boxplot')`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=899261&seed=5824&showansafter&height=550px&frame_id=boxplot" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 899261"></iframe>
 :::
 
 ---
@@ -218,7 +218,7 @@ cat(paste(as.vector(sample(iris$Petal.Width,10)), collapse=", "))
 
 Find the mean from the dot plot of sepal length for a sample of 10 iris flowers.
 ::: {.center}
-```{r echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.3} 
+```{r Practice_Dotplot_mean, echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.3, fig.cap = "", dpi = 300} 
 # use the preloaded iris package in R
 dfirisSL <- head(iris["Sepal.Length"],10)
 # find the max frequency (used `dplyr` package)
@@ -226,7 +226,7 @@ yheightSL <- max(count(dfirisSL, Sepal.Length)["n"])
 sepalmin <- min(dfirisSL)
 sepalmax <- max(dfirisSL)
 # basic dotplot (binwidth = the accuracy of the data)
-irisPL = ggplot(dfirisSL, aes(x=Sepal.Length), dpi = 600)
+irisPL = ggplot(dfirisSL, aes(x=Sepal.Length))
 irisPL = irisPL + geom_dotplot(binwidth=0.1, method="histodot", dotsize = 0.6, fill="blue")
 # use coor_fixed(ration=binwidth*dotsize*max frequency) to setup the right y axis height.
 irisPL = irisPL + theme_bw() + coord_fixed(ratio=0.1*0.6*yheightSL)
@@ -254,7 +254,7 @@ irisPL
 ## Practice: Course Overall Grade {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=279978&seed=2020&showansafter', height="550px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=279978&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 279978"></iframe>
 :::
 
 ---
@@ -305,7 +305,7 @@ The mean is `r round(mean(actor_age$Age),1)`. The sample standard deviation is `
 ## Example: Mean and SD - Calculation By Hand
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.geogebra.org/material/iframe/id/DS6PUaXy/width/1300/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false', height='600px')`
+<iframe src="https://www.geogebra.org/material/iframe/id/DS6PUaXy/width/1300/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
 :::
 
 ::: {.footmark}
@@ -329,7 +329,7 @@ Find the standard deviation of this sample.
 ## Practice: Mean, Standard Deviation and Variance {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq.php?id=251836&seed=2024&showansafter', height="550px")`
+<iframe src="https://www.myopenmath.com/embedq.php?id=251836&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
 :::
 
 ---
@@ -341,7 +341,7 @@ Find the standard deviation of this sample.
 - When we multiply values in a data set by a factor $k$, the mean and the standard deviation both scale by the factor $k$.
 
 ::: {.iframecontainer, style="height: 40vh;"}
-`r knitr::include_url('https://www.geogebra.org/material/iframe/id/r25rDxYZ/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false', height='80%')`
+<iframe src="https://www.geogebra.org/material/iframe/id/r25rDxYZ/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
 :::
 
 ::: {.footmark}
@@ -353,7 +353,7 @@ Source: https://www.geogebra.org/m/r25rDxYZ
 ## Effect of Changes of Data
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.geogebra.org/material/iframe/id/fenbj3qZ/width/910/height/628/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false', height='600px')`
+<iframe src="https://www.geogebra.org/material/iframe/id/fenbj3qZ/width/910/height/628/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
 :::
 
 ::: {.footmark}
@@ -400,7 +400,7 @@ Consider a data set of scores on a standardized test with a mean 70 and standard
 ## Practice: Understanding $Z$-score {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/multiembedq2.php?id=345978-425748&frame_id=303&resizer=true&seed=2023")`
+<iframe src="https://www.myopenmath.com/multiembedq2.php?id=345978-425748&frame_id=303&resizer=true&seed=2023" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 345978"></iframe>
 :::
 
 ---
@@ -466,7 +466,7 @@ Apply Chebyshev's theorem, there are 75% of data are between $\bar{x}-2s=2$ amd 
 ## Practice: The Empirical Rule {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=25941&frame_id=303&resizer=true&seed=2020")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=25941&frame_id=303&resizer=true&seed=2020" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 25941"></iframe>
 :::
 
 ---

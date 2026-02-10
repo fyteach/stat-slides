@@ -70,18 +70,26 @@ code {
   font-size: 70%;
 }
 
-div.footmark p,
 div.footmark {
   margin-block-start: 0;
   margin-block-end: 0;
-  margin: 0;
+  display: flex;
+  font-size: 0.7em;
+  width: 100%;
+  bottom: 0em;
+  padding: 0 3em 0 2em;
+  position: absolute;
+  color: #6296ff;
+  justify-content: center;
 }
+
 
 table, table thead th {
   border-top: 0px;
   border-bottom: 0px;
   padding: 0px;
 }
+
 table thead th[style] {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -111,7 +119,7 @@ table thead th { padding: 0 0.25em; }
 
 .remark::before {
   content: "Remark:";
-  color: #Feec01;
+  color: #857c0bff;
   font-weight: bold;
   font-size: 120%;
 }
@@ -126,9 +134,9 @@ table thead th { padding: 0 0.25em; }
 
 .slide-container .slide {
   background-image: url(by-nc-sa.svg);
-  background-size: auto 0.6em;
+  background-size: auto 0.7em;
   background-repeat: no-repeat;
-  background-position: 6% calc(100% - 0.5em);
+  background-position: left 1em bottom 0em;
   background-attachment: local;
 }
 
@@ -139,7 +147,7 @@ table thead th { padding: 0 0.25em; }
 /* Make each slide a flex column that fills the viewport */
 .slide {
   max-width: 100vw;
-  height: 98vh;
+  /* height: 98dvh; */
   max-height: 100vh;               /* slide fills viewport height */
   display: flex !important;    /* flex container */
   flex-direction: column;      /* vertical stacking */
@@ -207,14 +215,6 @@ iframe[src^="https://www.myopenmath.com"] {
 
 .small { font-size: 60%; }
 
-.footmark {
-  font-size: 70%;
-  bottom: 1.2em;
-  position: absolute;
-  color: #6296ff;
-  /* background-color: #ffeec4; */
-}
-
 mjx-container[jax="SVG"][display="true"]{
   margin: 0.5em 0 !important;
 }
@@ -233,4 +233,12 @@ mjx-container[jax="SVG"][display="true"]{
 
 :root {
   --slide-ratio: calc(9/16);
+}
+
+
+@supports (min-height: 100dvh) {
+  .slide { min-height: 100dvh; }
+}
+@supports not (min-height: 100dvh) and (min-height: 100svh) {
+  .slide { min-height: 100svh; }
 }
