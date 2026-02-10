@@ -6,8 +6,8 @@ output:
   litedown::html_format:
     keep_md: true
     meta:
-      css: ["@default", "@snap", "meta-data/custom.css", "@npm/@xiee/utils/css/key-buttons.min.css,heading-anchor.min.css"]
-      js: ["@snap", "@npm/@xiee/utils/js/key-buttons.min.js, external-link.min.js, heading-anchor.min.js", "meta-data/lastupdated.js"]
+      css: ["@default", "@snap", "meta-data/custom.css", "@key-buttons","@heading-anchor"]
+      js: ["@snap", "@key-buttons", "@external-link", "@heading-anchor", "meta-data/lastupdated.js"]
       # header-includes: ["meta-data/Hypothesis-config.html", "meta-data/mathjax-config.html"]
     options:
       includes: ["meta-data/Hypothesis-config.html", "meta-data/mathjax-config.html"]
@@ -80,13 +80,13 @@ cat(paste(head(iris$Petal.Length,15), collapse=", "))
 **Solution:** For each number in the data set, we draw a dot. We stack dots of the same value from bottom to up.
 
 ::: {.center}
-```{r echo=FALSE, results = 'asis', fig.width=6, fig.asp=0.5} 
+```{r dotplot-petal-length, echo=FALSE, results = 'asis', fig.width=10, fig.asp=0.5, fig.cap=""} 
 # use the preloaded iris package in R
 irisdot <- head(iris["Petal.Length"],15)
 # find the max frequency (used `plyr` package)
 yheightPL <- max(plyr::count(irisdot, vars = "Petal.Length"))
 # basic dotplot (binwidth = the accuracy of the data)
-dotchart = ggplot(irisdot, aes(x=Petal.Length), dpi = 600)
+dotchart = ggplot(irisdot, aes(x=Petal.Length))
 dotchart = dotchart + geom_dotplot(binwidth=0.1, method="histodot", dotsize = 0.6, fill="blue")
 # dotchart = dotchart + stat_density(aes(y=0.1/7*..count..), geom="line", colour="red", linetype="dashed", size=1,adjust=1.2)
 # use coor_fixed(ration=binwidth*dotsize*max frequency) to setup the right y axis height.
@@ -213,9 +213,9 @@ kable(freq.table, align="cc")
 - Graph the histogram using the frequency distribution table.
 
 ::: {.center}
-```{r echo=FALSE, results = 'asis', fig.width=9, fig.asp=0.5} 
+```{r hist-car-mpg, echo=FALSE, results = 'asis', fig.width=9, fig.asp=0.5, fig.cap=""} 
 carshist <- head(mtcars["mpg"],30)
-ggplot(carshist, aes(x=mpg), dpi=600) +
+ggplot(carshist, aes(x=mpg)) +
   geom_histogram(binwidth=Bwidth,boundary=sm,
                  fill="lightblue", col="white",linewidth=1) +
   stat_density(aes(y=4*after_stat(count)), geom="line",
@@ -304,7 +304,7 @@ cat(paste(irispetal, collapse=", "))
 ## Practice: Frequency Table and Histogram {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq.php?id=1296859&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq.php?id=1296859&seed=2024&showansafter" width="100%" height="480px" loading="lazy" allowfullscreen title="MyOpenMath question 1296859"></iframe>
 :::
 
 <!-- --- -->
@@ -382,7 +382,7 @@ Source: [Example 2.7.1, OpenStax Introductory Statistics](https://stats.libretex
 ## Practice: Shapes of Distributions {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=6992&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=6992&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 6992"></iframe>
 :::
 
 ---
@@ -404,7 +404,7 @@ Source: [Example 2.7.1, OpenStax Introductory Statistics](https://stats.libretex
 
 ## Mean and Median for Distributions in Different Shapes
 
-`r knitr::include_url("https://istats.shinyapps.io/MeanvsMedian/", height="550px")`
+<iframe src="https://istats.shinyapps.io/MeanvsMedian/" width="100%" height="500px" loading="lazy" allowfullscreen></iframe>
 
 ::: {.footmark}
 Source: https://istats.shinyapps.io/MeanvsMedian/
@@ -418,13 +418,13 @@ A student survey was conducted at a major university. The following histogram sh
 1. What is the typical number of drinks a student has during a week?
 2. Do the data suggest that drinking is a problem in this university?
 ::: {.center}
-```{r echo=FALSE, results = 'asis', fig.width=12, fig.asp=0.5} 
+```{r hist_alcohol, echo=FALSE, results = 'asis', fig.width=12, fig.asp=0.5, fig.cap=""} 
 load("Data-Frames-SUNY-Concepts-in-Statistics/drinking.rdata")
 drinking <- rename(data)
 drinkinghabit<- drinking$Alcohol[!is.na(drinking$Alcohol)]
 dfdrk <- data.frame(drinkinghabit)
 colnames(dfdrk) <- c("Alcohol")
-drhist <- ggplot(dfdrk, aes(x=Alcohol), dpi=600) +
+drhist <- ggplot(dfdrk, aes(x=Alcohol)) +
   geom_histogram(binwidth=4, boundary=0,fill="lightblue", col="white") + 
   scale_x_continuous(breaks = seq(0, 36, 1)) + 
   scale_y_continuous(breaks = seq(0, 140,5)) +
@@ -434,7 +434,7 @@ geom_vline(aes(xintercept=median(Alcohol)), color="red", linetype="dashed", line
 # geom_vline(aes(xintercept=quantile(Alcohol)[2]), color="black", linetype="dashed", linewidth=1) + 
 #geom_vline(aes(xintercept=quantile(Alcohol)[4]), color="yellow", linetype="dashed", linewidth=1) + 
 ylab("Frequency")
-#ggplot(dfdrk, aes(x="", y=Alcohol), dpi=600)+
+#ggplot(dfdrk, aes(x="", y=Alcohol))+
 #geom_boxplot(fill = "green")
 drhist + 
   ggtitle("Histogram of alcoholic beverages consumed per week") +
@@ -547,7 +547,7 @@ knitr::kable(titanic, 'pipe', align = "cc")
 ## Practice: Pie Chart {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq.php?id=278180&seed=2024&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq.php?id=278180&seed=2024&showansafter" width="100%" height="510px" loading="lazy" allowfullscreen title="MyOpenMath question 278180"></iframe>
 :::
 
 ---

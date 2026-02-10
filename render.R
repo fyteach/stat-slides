@@ -1,3 +1,6 @@
-knitr::knit("Topic-1-Statistical-Studies.Rmd", "Topic-1-Statistical-Studies.md")
+slides <- c("Topic-1-Statistical-Studies", "Topic-2-Graphical-Descriptions")
 
-litedown::fuse("Topic-1-Statistical-Studies.md", output = "Topic-1-Statistical-Studies.html")
+current_slide <- slides[2]
+
+knitr::knit(paste0(current_slide, ".Rmd"), paste0(current_slide, ".md"))
+litedown::fuse(paste0(current_slide, ".md"), output = paste0(current_slide, ".html"))

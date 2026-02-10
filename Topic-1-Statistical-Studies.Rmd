@@ -6,8 +6,8 @@ output:
   litedown::html_format:
     keep_md: true
     meta:
-      css: ["@default", "@snap", "meta-data/custom.css", "@npm/@xiee/utils/css/key-buttons.min.css,heading-anchor.min.css"]
-      js: ["@snap", "@npm/@xiee/utils/js/key-buttons.min.js, external-link.min.js, heading-anchor.min.js", "meta-data/lastupdated.js"]
+      css: ["@default", "@snap", "meta-data/custom.css", "@key-buttons","@heading-anchor"]
+      js: ["@snap", "@key-buttons", "@external-link", "@heading-anchor", "meta-data/lastupdated.js"]
       # header-includes: ["meta-data/Hypothesis-config.html", "meta-data/mathjax-config.html"]
     options:
       includes: ["meta-data/Hypothesis-config.html", "meta-data/mathjax-config.html"]
@@ -233,7 +233,7 @@ Source: [Khan Academy](https://www.khanacademy.org/math/probability/study-design
 ## Practice: Observational vs Experimental II {.unnumbered}
 
 ::: {.iframecontainer}
-<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 :::
 
 ---
@@ -258,19 +258,31 @@ Source: [Khan Academy](https://www.khanacademy.org/math/probability/study-design
 
 ## Question on Cause-and-Effect
 
-- A research question that focuses on a cause-and-effect relationship is common in disciplines that use experiments, such as medicine or psychology.
-  <!-- - Does cell phone usage increase the risk of developing a brain tumor?
-  - Does drinking red wine lower the risk of a heart attack? -->
+- Many research studies, especially in medicine and psychology, focus on **cause-and-effect** relationships.
 
-- In a study of a relationship between two variables, one variable is the **explanatory variable**, and the other is the **response variable**.
+  **Example:** Does drinking red wine lower the risk of a heart attack?
 
-- To establish a cause-and-effect relationship, we want to get rid of confounding variable and make sure the explanatory variable is the only thing that impacts the response variable.
-  
-  **Confounding variable:** An extra variable that may have effect on the response variable of interest.
+- In cause-and-effect study, an **explanatory variable** is a cause, and the **response variable** is the effect. 
+  To properly establish cause and effect relationship, researchers try to remove **extraneous variables** which are variables other than the explanatory variables that may affect the response.
 
 ---
 
-## Example: Cause-and-Effect or Correlation
+## Confounding and Lurking Variables
+
+- A confounding variable is an extraneous variable that affects the response variable and makes it hard to see the real effect of the explanatory variable.
+
+  **Example:** In the study of the relation between a type fertilizer and tomato size, the amount of sunshine will be a confounding variable. It contributes to the growth of tomato.
+
+- A lurking variable is an unmeasured third variable that influences both the explanatory and response variables.
+
+  **Example:** More firefighters are linked with more fire damage, but the real lurking variable is fire size, which increases both.
+
+
+***In general, we should not make cause-and-effect statements from observational studies unless impact of confounding variables can be significantly decreased.***
+
+---
+
+## Example: Type of Relationship
 
 Determine if the question is a cause-and-effect question? What are the explanatory and response variables?
 
@@ -285,14 +297,11 @@ Determine if the question is a cause-and-effect question? What are the explanato
 
 ---
 
-## Example: Appropriate Conclusion
+## Practice: Confounding Variable Definition {.unnumbered}
 
-***In general, we should not make cause-and-effect statements from observational studies unless impact of confounding variables can be significantly decreased.***
-
-**Example:** A researcher studies the medical records of 500 randomly selected patients. Based on the information in the records, he divides the patients into two groups: those given the recommendation to take an aspirin every day and those with no such recommendation. He reports the percentage of each group that developed heart disease.  
-Determine whether the study supports the conclusion that taking aspirin lowers the risk of heart attacks.
-
-**Answer:** The conclusion claims a cause-and-effect relationship. To answer the question, we need an experimental study. However, the study has no control on data which makes it inappropriate.
+::: {.iframecontainer}
+<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+:::
 
 ---
 
@@ -309,7 +318,113 @@ Do individuals with higher educational attainment tend to earn higher salaries?
 ## Practice: Correlation or Causation {.unnumbered}
 
 ::: {.iframecontainer}
-<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+:::
+
+---
+
+
+## Principles of Experimental Design
+
+- **Direct control:** Participants are placed into two groups: control group (no treatment), treatment group (receives treatment).
+
+  - **Purpuse:** Reduce the influence of extraneous variables.
+
+- **Randomization (random assignment):** Participants are placed into groups by chance.
+
+  - **Purpose:** Reduce the impact of chance differences between groups. Randomization makes groups similar on average in both seen and unseen factors.
+
+- **Replication:** Use enough subjects in each group, and ensure the study can be repeated.
+ 
+  - **Purpose:** A single study, especially with a small sample, may produce results by chance. Replication helps confirm that the treatment effect is real.
+
+
+- **Blocking:** Group similar participants into blocks based on a factor known to affect the outcome (e.g., age, prior skill). Then randomize within each block.
+
+  - **Purpose:** Reduce variation from known influential factors.
+
+---
+
+## Strategies for Direct Control
+
+
+- **Placebo:** A fake treatment with no active ingredient.
+
+  **Placebo effect:** Participants report improvement simply because they believe they received real treatment.
+
+  **Purpose:**: Reduce or measure the placebo effect so it does not distort the results.
+
+- **Blinding:** Keep people unaware of which treatment they receive.
+
+  - **Single-blind:** Participants do not know their group.
+  - **Double-blind:** Neither participants nor the researchers who interact with them or measure outcomes know the group assignments.
+
+  **Purpose:** Prevent bias in behavior, reporting, and measurement.
+
+---
+
+## Mini‑example of Experimental Design
+
+**Goal:** Test a new reading app for college students.
+
+- Block by class period (morning vs. afternoon).
+
+- Within each block, randomly assign students to app or no app.
+
+- Use many students per group.
+
+- Instructors and students do not know which version is “new” vs. “standard” (blinding, if possible).
+
+---
+
+## Example: Does the Study Support the Conclusion?
+
+**Example:** A researcher studies the medical records of 500 randomly selected patients. Based on the information in the records, he divides the patients into two groups: those given the recommendation to take an aspirin every day and those with no such recommendation. He reports the percentage of each group that developed heart disease.  
+Determine whether the study supports the conclusion that taking aspirin lowers the risk of heart attacks.
+
+**Answer:** The conclusion claims a cause-and-effect relationship. To answer the question, we need an experimental study. However, the study has no control on data which makes it inappropriate.
+
+---
+
+## Example: Is the Conclusion Appropriate?
+
+
+A teacher read about a study testing whether the background color of a digital reading passage affects reading speed. In the study, 80 students read the same passage and were randomly assigned to:
+Group A (40 students) with white background; Group B (40 students) with light yellow background.  
+
+Students in Group B finished reading significantly faster than those in Group A.  
+The teacher concluded that using a light yellow background will help all students read faster in all reading situations.
+
+- Is this study appropriate? Why or why not?  
+- Is the conclusion appropriate? Why or why not?
+
+**Answer**
+
+- **Yes**.  It is an experiment with direct control (same passage) and random assignment, which helps support a cause‑and‑effect relationship.
+
+- **No.**  The conclusion is overgeneralized. The study tested only one group of students, one passage, and one setting.
+
+---
+
+## Practice: Principles of Experimental Design {.unnumbered}
+
+::: {.iframecontainer}
+<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+:::
+
+---
+
+## Practice: Experimental Design {.unnumbered}
+
+There is an ongoing debate about how many spaces should be placed after a period in typed documents. Alana read about a study where 100 participants all read the same document typed in Courier New font. Half of the participants were randomly assigned the document with one space after each period, and the other half were given the document with two spaces after each period.
+
+Participants who read the document with two spaces after each period were able to finish reading significantly faster than those with one space after each period. Alana concluded that using two spaces after each period will help people read all documents faster.
+
+- Is this study appropriate? Why or Why not?
+- Is the conclusion appropriate? Why or Why not.
+
+::: {.footmark}
+Source: [Khan Academy](https://www.khanacademy.org/math/ap-statistics/gathering-data-ap/statistics-experiments/e/issues-experiments)
 :::
 
 ---
@@ -407,131 +522,6 @@ Click the link to open the practice in a new window.
 
 ---
 
-## Elements of Experimental Design (1 of 2)
-
-**Goal of control:** Reduce the effect of other variables (not the treatment) on the outcome. These other variables are called **extraneous** or **confounding** variables.
-
-**Control strategies:**
-
-- **Control group:** A baseline group that gets no treatment or a standard/neutral treatment.
-
-  **Purpose:** To compare against the treatment group.
-
-- **Placebo:** A fake treatment with no active ingredient.
-
-  **Placebo effect:** When participants feel better because they believe they got a real treatment.
-
-- **Blinding:** Keep people unaware of which treatment they receive.
-
-  - **Single-blind:** Participants do not know their group.
-  - **Double-blind:** Participants and researchers who interact with them or measure outcomes do not know the groups.
-
-  **Purpose:** Prevent bias in behavior, reporting, and measurement.
-
-
-**Why control helps:** It isolates the effect of the treatment so we can make a fair comparison.
-
-<!-- 
-- **Control** reduces the effects of variables other than the explanatory variables and the response variables, known as extraneous variables.
-
-- Three control strategies are control groups, placebos, and blinding.
-
-  - A **control group** is a baseline group that receives no treatment or a neutral treatment.
-
-  - A neutral treatment that has no "real" effect on the dependent variable is called a **placebo**, and a participant's positive response to a placebo is called the **placebo effect**.
-
-  - **Blinding** is the practice of not telling participants whether they are receiving a placebo. **Double-blinding** is the practice of not telling both the participants and the researchers which group receiving a treatment or a placebo. -->
-
----
-
-## Elements of Experimental Design (2 of 2)
-
-
-- **Randomization (random assignment):** Assign participants to groups by chance.
-
-  - **Purpose:** Make groups similar on average in both seen and unseen factors.
-  - **Result:** Differences in outcomes are more likely due to the treatment, not pre‑existing differences.
-
-
-
-- **Replication:** Use enough units in each group, and (ideally) repeat the study.
- 
-  - Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.  
- 
-  - Any good experiment should be reproducible, and in particular, replication should yield similar results.
-
-
-
-- **Blocking:** Group similar units before assignment, then randomize within each block.
-
-  - **Purpose:** Control known sources of variation (e.g., age, class period, prior skill).
-  - **When to block:** If a factor is strongly related to the outcome and is known in advance.
-
-
-**Mini‑example (education):** Goal: Test a new reading app.
-
-Block by class period (morning vs. afternoon).
-Within each block, randomly assign students to app or no app.
-Use many students per group.
-Teachers and students do not know which version is “new” vs. “standard” (blinding, if possible).
-<!-- 
-- **Randomization** ensures that this estimate is statistically valid.
-
-  - With random assignment, we can be fairly confident that any differences we observe in the response of treatment groups is due to the explanatory variable.
-
-- **Replication** reduces variability in experimental results and increases their significance.
-
-  - Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.  
-  - Any good experiment should be reproducible, and in particular, replication should yield similar results.
-
-- **Blocking** is grouping experimental units with similar characteristics and randomizing treatments within those groups to control for variability. -->
-
----
-
-## Confounding Variable vs Lurking Variable
-
-- A confounding variable has at least a partial effect on the response variable.
-
-- **Example:** In the study of the relation between a type fertilizer and tomato size, the amount of sunshine will be a confounding variable. It contributes to the growth of tomato.
-
-- A lurking variable is an unseen (unmeasured) third variable that is a common response to an apparent association between the explanatory and response variables
-
-- **Example:** People find that there is a positive association between number of firefighters and amount of damage. However, both are affected the size of fire.
-
-Both confounding and lurking variables are extraneous variables which are variable other than the explanatory variables that may have an effect on the response variable.
-
----
-
-## Practice: Principles of Experimental Design {.unnumbered}
-
-::: {.iframecontainer}
-<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
-:::
-
----
-
-## Practice: Experimental Design {.unnumbered}
-
-There is an ongoing debate about how many spaces should be placed after a period in typed documents. Alana read about a study where 100 participants all read the same document typed in Courier New font. Half of the participants were randomly assigned the document with one space after each period, and the other half were given the document with two spaces after each period.
-
-Participants who read the document with two spaces after each period were able to finish reading significantly faster than those with one space after each period. Alana concluded that using two spaces after each period will help people read all documents faster.
-
-Is this study appropriate? Why?
-
-::: {.footmark}
-Source: [Khan Academy](https://www.khanacademy.org/math/ap-statistics/gathering-data-ap/statistics-experiments/e/issues-experiments)
-:::
-
----
-
-## Practice: Confounding Variable Definition {.unnumbered}
-
-::: {.iframecontainer}
-<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
-:::
-
----
-
 <!--# class="middle center"-->
 
 ::: {.part}
@@ -621,7 +611,7 @@ In the cell with 9 empty cells below it, say `A1`, apply the Excel function `=UN
 3. Generate 10 integers of 2 digits that are less than 50 and without duplication.
 
 ---
-
+<!-- 
 ## Install the Analysis ToolPak (Optional)
 
 If you have a desktop version Excel, you may install the Excel add-in, Analysis Toolpak which is frequently used for analyzing data.
@@ -636,4 +626,4 @@ If you have a desktop version Excel, you may install the Excel add-in, Analysis 
   
   - Step 4: In the new display, look for Manage: Excel Add-ins and click Go next to it.
   
-  - Step 5: In the new popup windows, select The Analysis ToolPak and then click the OK button.
+  - Step 5: In the new popup windows, select The Analysis ToolPak and then click the OK button. -->

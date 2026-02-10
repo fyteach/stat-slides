@@ -18,8 +18,8 @@ h1, h2, h3, .part {
 } */
 
 h1, h2, h2 {
-  margin-block-start: 0.6em;
-  margin-block-end: 0.6em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 p, ul, ol, div {
@@ -139,7 +139,8 @@ table thead th { padding: 0 0.25em; }
 /* Make each slide a flex column that fills the viewport */
 .slide {
   max-width: 100vw;
-  height: 100vh;               /* slide fills viewport height */
+  height: 98vh;
+  max-height: 100vh;               /* slide fills viewport height */
   display: flex !important;    /* flex container */
   flex-direction: column;      /* vertical stacking */
   position: relative;          /* keeps .footmark absolute positioning sane */
@@ -208,7 +209,7 @@ iframe[src^="https://www.myopenmath.com"] {
 
 .footmark {
   font-size: 70%;
-  bottom: 0.8em;
+  bottom: 1.2em;
   position: absolute;
   color: #6296ff;
   /* background-color: #ffeec4; */
