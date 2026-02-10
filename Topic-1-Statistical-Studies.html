@@ -244,13 +244,14 @@ mjx-container[jax="SVG"][display="true"]{
   --slide-ratio: calc(9/16);
 }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@xiee/utils@1.14.24/css/key-buttons.min.css,npm/@xiee/utils@1.14.24/css/heading-anchor.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/css/key-buttons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/css/heading-anchor.min.css">
 </head>
 <body>
 <div class="frontmatter">
 <div class="title"><h1>Topic 1: Statistical Studies</h1></div>
 <div class="author"><h2>Fei Ye</h2></div>
-<div class="date"><h3><code>r format(Sys.time(), '%B %Y')</code></h3></div>
+<div class="date"><h3>February 2026</h3></div>
 </div>
 <div class="body">
 <h2 id="sec:references" class="unnumbered">References</h2>
@@ -452,7 +453,7 @@ mjx-container[jax="SVG"][display="true"]{
 <hr />
 <h2 id="sec:practice-observational-vs-experimental-ii" class="unnumbered">Practice: Observational vs Experimental II</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=277257&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
 <h2 id="sec:questions-about-population-1-of-2"><span class="section-number main-number">9</span> Questions about Population (1 of 2)</h2>
@@ -498,20 +499,29 @@ mjx-container[jax="SVG"][display="true"]{
 <h2 id="sec:question-on-cause-and-effect"><span class="section-number main-number">11</span> Question on Cause-and-Effect</h2>
 <ul>
 <li>
-<p>A research question that focuses on a cause-and-effect relationship is common in disciplines that use experiments, such as medicine or psychology.</p>
-<!-- - Does cell phone usage increase the risk of developing a brain tumor?
-- Does drinking red wine lower the risk of a heart attack? -->
+<p>Many research studies, especially in medicine and psychology, focus on <strong>cause-and-effect</strong> relationships.</p>
+<p><strong>Example:</strong> Does drinking red wine lower the risk of a heart attack?</p>
 </li>
 <li>
-<p>In a study of a relationship between two variables, one variable is the <strong>explanatory variable</strong>, and the other is the <strong>response variable</strong>.</p>
-</li>
-<li>
-<p>To establish a cause-and-effect relationship, we want to get rid of confounding variable and make sure the explanatory variable is the only thing that impacts the response variable.</p>
-<p><strong>Confounding variable:</strong> An extra variable that may have effect on the response variable of interest.</p>
+<p>In cause-and-effect study, an <strong>explanatory variable</strong> is a cause, and the <strong>response variable</strong> is the effect.
+To properly establish cause and effect relationship, researchers try to remove <strong>extraneous variables</strong> which are variables other than the explanatory variables that may affect the response.</p>
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-cause-and-effect-or-correlation"><span class="section-number main-number">12</span> Example: Cause-and-Effect or Correlation</h2>
+<h2 id="sec:confounding-and-lurking-variables"><span class="section-number main-number">12</span> Confounding and Lurking Variables</h2>
+<ul>
+<li>
+<p>A confounding variable is an extraneous variable that affects the response variable and makes it hard to see the real effect of the explanatory variable.</p>
+<p><strong>Example:</strong> In the study of the relation between a type fertilizer and tomato size, the amount of sunshine will be a confounding variable. It contributes to the growth of tomato.</p>
+</li>
+<li>
+<p>A lurking variable is an unmeasured third variable that influences both the explanatory and response variables.</p>
+<p><strong>Example:</strong> More firefighters are linked with more fire damage, but the real lurking variable is fire size, which increases both.</p>
+</li>
+</ul>
+<p><em><strong>In general, we should not make cause-and-effect statements from observational studies unless impact of confounding variables can be significantly decreased.</strong></em></p>
+<hr />
+<h2 id="sec:example-type-of-relationship"><span class="section-number main-number">13</span> Example: Type of Relationship</h2>
 <p>Determine if the question is a cause-and-effect question? What are the explanatory and response variables?</p>
 <ol>
 <li>Does use of computer-aided instruction in college math classes improve test scores?</li>
@@ -527,11 +537,10 @@ mjx-container[jax="SVG"][display="true"]{
 </li>
 </ol>
 <hr />
-<h2 id="sec:example-appropriate-conclusion"><span class="section-number main-number">13</span> Example: Appropriate Conclusion</h2>
-<p><em><strong>In general, we should not make cause-and-effect statements from observational studies unless impact of confounding variables can be significantly decreased.</strong></em></p>
-<p><strong>Example:</strong> A researcher studies the medical records of 500 randomly selected patients. Based on the information in the records, he divides the patients into two groups: those given the recommendation to take an aspirin every day and those with no such recommendation. He reports the percentage of each group that developed heart disease.<br />
-Determine whether the study supports the conclusion that taking aspirin lowers the risk of heart attacks.</p>
-<p><strong>Answer:</strong> The conclusion claims a cause-and-effect relationship. To answer the question, we need an experimental study. However, the study has no control on data which makes it inappropriate.</p>
+<h2 id="sec:practice-confounding-variable-definition" class="unnumbered">Practice: Confounding Variable Definition</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+</div>
 <hr />
 <h2 id="sec:practice-cause-and-effect-or-correlation" class="unnumbered">Practice: Cause-and-Effect or Correlation</h2>
 <p>Do individuals with higher educational attainment tend to earn higher salaries?</p>
@@ -543,10 +552,112 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 <hr />
 <h2 id="sec:practice-correlation-or-causation" class="unnumbered">Practice: Correlation or Causation</h2>
 <div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=307471&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
 </div>
 <hr />
-<h2 id="sec:sampling-plans"><span class="section-number main-number">14</span> Sampling Plans</h2>
+<h2 id="sec:principles-of-experimental-design"><span class="section-number main-number">14</span> Principles of Experimental Design</h2>
+<ul>
+<li>
+<p><strong>Direct control:</strong> Participants are placed into two groups: control group (no treatment), treatment group (receives treatment).</p>
+<ul>
+<li><strong>Purpuse:</strong> Reduce the influence of extraneous variables.</li>
+</ul>
+</li>
+<li>
+<p><strong>Randomization (random assignment):</strong> Participants are placed into groups by chance.</p>
+<ul>
+<li><strong>Purpose:</strong> Reduce the impact of chance differences between groups. Randomization makes groups similar on average in both seen and unseen factors.</li>
+</ul>
+</li>
+<li>
+<p><strong>Replication:</strong> Use enough subjects in each group, and ensure the study can be repeated.</p>
+<ul>
+<li><strong>Purpose:</strong> A single study, especially with a small sample, may produce results by chance. Replication helps confirm that the treatment effect is real.</li>
+</ul>
+</li>
+<li>
+<p><strong>Blocking:</strong> Group similar participants into blocks based on a factor known to affect the outcome (e.g., age, prior skill). Then randomize within each block.</p>
+<ul>
+<li><strong>Purpose:</strong> Reduce variation from known influential factors.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="sec:strategies-for-direct-control"><span class="section-number main-number">15</span> Strategies for Direct Control</h2>
+<ul>
+<li>
+<p><strong>Placebo:</strong> A fake treatment with no active ingredient.</p>
+<p><strong>Placebo effect:</strong> Participants report improvement simply because they believe they received real treatment.</p>
+<p><strong>Purpose:</strong>: Reduce or measure the placebo effect so it does not distort the results.</p>
+</li>
+<li>
+<p><strong>Blinding:</strong> Keep people unaware of which treatment they receive.</p>
+<ul>
+<li><strong>Single-blind:</strong> Participants do not know their group.</li>
+<li><strong>Double-blind:</strong> Neither participants nor the researchers who interact with them or measure outcomes know the group assignments.</li>
+</ul>
+<p><strong>Purpose:</strong> Prevent bias in behavior, reporting, and measurement.</p>
+</li>
+</ul>
+<hr />
+<h2 id="sec:mini-example-of-experimental-design"><span class="section-number main-number">16</span> Mini‑example of Experimental Design</h2>
+<p><strong>Goal:</strong> Test a new reading app for college students.</p>
+<ul>
+<li>
+<p>Block by class period (morning vs. afternoon).</p>
+</li>
+<li>
+<p>Within each block, randomly assign students to app or no app.</p>
+</li>
+<li>
+<p>Use many students per group.</p>
+</li>
+<li>
+<p>Instructors and students do not know which version is “new” vs. “standard” (blinding, if possible).</p>
+</li>
+</ul>
+<hr />
+<h2 id="sec:example-does-the-study-support-the-conclusion"><span class="section-number main-number">17</span> Example: Does the Study Support the Conclusion?</h2>
+<p><strong>Example:</strong> A researcher studies the medical records of 500 randomly selected patients. Based on the information in the records, he divides the patients into two groups: those given the recommendation to take an aspirin every day and those with no such recommendation. He reports the percentage of each group that developed heart disease.<br />
+Determine whether the study supports the conclusion that taking aspirin lowers the risk of heart attacks.</p>
+<p><strong>Answer:</strong> The conclusion claims a cause-and-effect relationship. To answer the question, we need an experimental study. However, the study has no control on data which makes it inappropriate.</p>
+<hr />
+<h2 id="sec:example-is-the-conclusion-appropriate"><span class="section-number main-number">18</span> Example: Is the Conclusion Appropriate?</h2>
+<p>A teacher read about a study testing whether the background color of a digital reading passage affects reading speed. In the study, 80 students read the same passage and were randomly assigned to:
+Group A (40 students) with white background; Group B (40 students) with light yellow background.</p>
+<p>Students in Group B finished reading significantly faster than those in Group A.<br />
+The teacher concluded that using a light yellow background will help all students read faster in all reading situations.</p>
+<ul>
+<li>Is this study appropriate? Why or why not?</li>
+<li>Is the conclusion appropriate? Why or why not?</li>
+</ul>
+<p><strong>Answer</strong></p>
+<ul>
+<li>
+<p><strong>Yes</strong>.  It is an experiment with direct control (same passage) and random assignment, which helps support a cause‑and‑effect relationship.</p>
+</li>
+<li>
+<p><strong>No.</strong>  The conclusion is overgeneralized. The study tested only one group of students, one passage, and one setting.</p>
+</li>
+</ul>
+<hr />
+<h2 id="sec:practice-principles-of-experimental-design" class="unnumbered">Practice: Principles of Experimental Design</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
+</div>
+<hr />
+<h2 id="sec:practice-experimental-design" class="unnumbered">Practice: Experimental Design</h2>
+<p>There is an ongoing debate about how many spaces should be placed after a period in typed documents. Alana read about a study where 100 participants all read the same document typed in Courier New font. Half of the participants were randomly assigned the document with one space after each period, and the other half were given the document with two spaces after each period.</p>
+<p>Participants who read the document with two spaces after each period were able to finish reading significantly faster than those with one space after each period. Alana concluded that using two spaces after each period will help people read all documents faster.</p>
+<ul>
+<li>Is this study appropriate? Why or Why not?</li>
+<li>Is the conclusion appropriate? Why or Why not.</li>
+</ul>
+<div class="footmark">
+<p>Source: <a href="https://www.khanacademy.org/math/ap-statistics/gathering-data-ap/statistics-experiments/e/issues-experiments">Khan Academy</a></p>
+</div>
+<hr />
+<h2 id="sec:sampling-plans"><span class="section-number main-number">19</span> Sampling Plans</h2>
 <p>To make accurate inference, the sample must be representative of the population.</p>
 <ul>
 <li>
@@ -560,7 +671,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 </li>
 </ul>
 <hr />
-<h2 id="sec:methods-of-random-sampling-1-of-2"><span class="section-number main-number">15</span> Methods of Random Sampling (1 of 2)</h2>
+<h2 id="sec:methods-of-random-sampling-1-of-2"><span class="section-number main-number">20</span> Methods of Random Sampling (1 of 2)</h2>
 <ul>
 <li>
 <p><strong>Simple random sample</strong>: groups of the same size are randomly selected. Table of random numbers, calculator and softwares are often used to generate random numbers.</p>
@@ -576,7 +687,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 </li>
 </ul>
 <hr />
-<h2 id="sec:methods-of-random-sampling-2-of-2"><span class="section-number main-number">16</span> Methods of Random Sampling (2 of 2)</h2>
+<h2 id="sec:methods-of-random-sampling-2-of-2"><span class="section-number main-number">21</span> Methods of Random Sampling (2 of 2)</h2>
 <ul>
 <li>
 <p><strong>Cluster sample</strong>: The population is first split into groups. Then some groups are selected randomly.</p>
@@ -606,7 +717,7 @@ Determine whether the study supports the conclusion that taking aspirin lowers t
 </li>
 </ol>
 <hr />
-<h2 id="sec:common-types-of-biased-sampling"><span class="section-number main-number">17</span> Common Types of Biased Sampling</h2>
+<h2 id="sec:common-types-of-biased-sampling"><span class="section-number main-number">22</span> Common Types of Biased Sampling</h2>
 <ul>
 <li>
 <p><strong>Voluntary Response Bias / Self-Selection Bias:</strong> participants can choose whether to participate in the study.
@@ -626,7 +737,7 @@ Example: random survey some classmates to estimate the average GPA or a college.
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-appropriate-sampling-design"><span class="section-number main-number">18</span> Example: Appropriate Sampling Design</h2>
+<h2 id="sec:example-appropriate-sampling-design"><span class="section-number main-number">23</span> Example: Appropriate Sampling Design</h2>
 <p>Suppose that you want to estimate the proportion of students at your college that use the library.</p>
 <p>Which sampling plan will produce the most reliable results?</p>
 <ol>
@@ -642,125 +753,12 @@ Example: random survey some classmates to estimate the average GPA or a college.
 <p>Click the link to open the practice in a new window.</p>
 <p><a href="https://www.myopenmath.com/embedq2.php?id=178722&amp;seed=2024&amp;showansafter">Practice on Sampling Techniques</a></p>
 <hr />
-<h2 id="sec:elements-of-experimental-design-1-of-2"><span class="section-number main-number">19</span> Elements of Experimental Design (1 of 2)</h2>
-<p><strong>Goal of control:</strong> Reduce the effect of other variables (not the treatment) on the outcome. These other variables are called <strong>extraneous</strong> or <strong>confounding</strong> variables.</p>
-<p><strong>Control strategies:</strong></p>
-<ul>
-<li>
-<p><strong>Control group:</strong> A baseline group that gets no treatment or a standard/neutral treatment.</p>
-<p><strong>Purpose:</strong> To compare against the treatment group.</p>
-</li>
-<li>
-<p><strong>Placebo:</strong> A fake treatment with no active ingredient.</p>
-<p><strong>Placebo effect:</strong> When participants feel better because they believe they got a real treatment.</p>
-</li>
-<li>
-<p><strong>Blinding:</strong> Keep people unaware of which treatment they receive.</p>
-<ul>
-<li><strong>Single-blind:</strong> Participants do not know their group.</li>
-<li><strong>Double-blind:</strong> Participants and researchers who interact with them or measure outcomes do not know the groups.</li>
-</ul>
-<p><strong>Purpose:</strong> Prevent bias in behavior, reporting, and measurement.</p>
-</li>
-</ul>
-<p><strong>Why control helps:</strong> It isolates the effect of the treatment so we can make a fair comparison.</p>
-<!-- 
-- **Control** reduces the effects of variables other than the explanatory variables and the response variables, known as extraneous variables.
-
-- Three control strategies are control groups, placebos, and blinding.
-
-  - A **control group** is a baseline group that receives no treatment or a neutral treatment.
-
-  - A neutral treatment that has no "real" effect on the dependent variable is called a **placebo**, and a participant's positive response to a placebo is called the **placebo effect**.
-
-  - **Blinding** is the practice of not telling participants whether they are receiving a placebo. **Double-blinding** is the practice of not telling both the participants and the researchers which group receiving a treatment or a placebo. -->
-<hr />
-<h2 id="sec:elements-of-experimental-design-2-of-2"><span class="section-number main-number">20</span> Elements of Experimental Design (2 of 2)</h2>
-<ul>
-<li>
-<p><strong>Randomization (random assignment):</strong> Assign participants to groups by chance.</p>
-<ul>
-<li><strong>Purpose:</strong> Make groups similar on average in both seen and unseen factors.</li>
-<li><strong>Result:</strong> Differences in outcomes are more likely due to the treatment, not pre‑existing differences.</li>
-</ul>
-</li>
-<li>
-<p><strong>Replication:</strong> Use enough units in each group, and (ideally) repeat the study.</p>
-<ul>
-<li>
-<p>Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.</p>
-</li>
-<li>
-<p>Any good experiment should be reproducible, and in particular, replication should yield similar results.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Blocking:</strong> Group similar units before assignment, then randomize within each block.</p>
-<ul>
-<li><strong>Purpose:</strong> Control known sources of variation (e.g., age, class period, prior skill).</li>
-<li><strong>When to block:</strong> If a factor is strongly related to the outcome and is known in advance.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Mini‑example (education):</strong> Goal: Test a new reading app.</p>
-<p>Block by class period (morning vs. afternoon).
-Within each block, randomly assign students to app or no app.
-Use many students per group.
-Teachers and students do not know which version is “new” vs. “standard” (blinding, if possible).</p>
-<!-- 
-- **Randomization** ensures that this estimate is statistically valid.
-
-  - With random assignment, we can be fairly confident that any differences we observe in the response of treatment groups is due to the explanatory variable.
-
-- **Replication** reduces variability in experimental results and increases their significance.
-
-  - Although randomization helps to ensure that treatment groups are as similar as possible, the results of a single experiment, applied to a few objects or subjects, should not be accepted without question.  
-  - Any good experiment should be reproducible, and in particular, replication should yield similar results.
-
-- **Blocking** is grouping experimental units with similar characteristics and randomizing treatments within those groups to control for variability. -->
-<hr />
-<h2 id="sec:confounding-variable-vs-lurking-variable"><span class="section-number main-number">21</span> Confounding Variable vs Lurking Variable</h2>
-<ul>
-<li>
-<p>A confounding variable has at least a partial effect on the response variable.</p>
-</li>
-<li>
-<p><strong>Example:</strong> In the study of the relation between a type fertilizer and tomato size, the amount of sunshine will be a confounding variable. It contributes to the growth of tomato.</p>
-</li>
-<li>
-<p>A lurking variable is an unseen (unmeasured) third variable that is a common response to an apparent association between the explanatory and response variables</p>
-</li>
-<li>
-<p><strong>Example:</strong> People find that there is a positive association between number of firefighters and amount of damage. However, both are affected the size of fire.</p>
-</li>
-</ul>
-<p>Both confounding and lurking variables are extraneous variables which are variable other than the explanatory variables that may have an effect on the response variable.</p>
-<hr />
-<h2 id="sec:practice-principles-of-experimental-design" class="unnumbered">Practice: Principles of Experimental Design</h2>
-<div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=438624&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
-</div>
-<hr />
-<h2 id="sec:practice-experimental-design" class="unnumbered">Practice: Experimental Design</h2>
-<p>There is an ongoing debate about how many spaces should be placed after a period in typed documents. Alana read about a study where 100 participants all read the same document typed in Courier New font. Half of the participants were randomly assigned the document with one space after each period, and the other half were given the document with two spaces after each period.</p>
-<p>Participants who read the document with two spaces after each period were able to finish reading significantly faster than those with one space after each period. Alana concluded that using two spaces after each period will help people read all documents faster.</p>
-<p>Is this study appropriate? Why?</p>
-<div class="footmark">
-<p>Source: <a href="https://www.khanacademy.org/math/ap-statistics/gathering-data-ap/statistics-experiments/e/issues-experiments">Khan Academy</a></p>
-</div>
-<hr />
-<h2 id="sec:practice-confounding-variable-definition" class="unnumbered">Practice: Confounding Variable Definition</h2>
-<div class="iframecontainer">
-<iframe src="https://www.myopenmath.com/embedq2.php?id=384958&seed=2024&showansafter" width="100%" height="500" loading="lazy" allowfullscreen title="MyOpenMath question"></iframe>
-</div>
-<hr />
 <!--# class="middle center"-->
 <div class="part">
 <p>Lab Instructions in Excel</p>
 </div>
 <hr />
-<h2 id="sec:introduction-to-excel-spreadsheets"><span class="section-number main-number">22</span> Introduction to Excel Spreadsheets</h2>
+<h2 id="sec:introduction-to-excel-spreadsheets"><span class="section-number main-number">24</span> Introduction to Excel Spreadsheets</h2>
 <div class="iframecontainer">
 <iframe style="width=100%" src="Lab-1.html"></iframe>
 </div>
@@ -769,7 +767,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </a></p>
 </div>
 <hr />
-<h2 id="sec:random-numbers-by-excel"><span class="section-number main-number">23</span> Random Numbers by Excel</h2>
+<h2 id="sec:random-numbers-by-excel"><span class="section-number main-number">25</span> Random Numbers by Excel</h2>
 <ul>
 <li><code>=RAND()</code> returns a random real number greater than or equal to 0 and less than 1.  To generate a random real number between \(a\) and \(b\), one can use <code>=RAND()*(b-a)+a</code>.</li>
 <li><code>=RANDBETWEEN(bottom, top)</code> returns an integer between <code>bottom</code> and <code>top</code>.</li>
@@ -782,7 +780,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </ul>
 </div>
 <hr />
-<h2 id="sec:example-usage-of-rand"><span class="section-number main-number">24</span> Example: Usage of <code>RAND()</code></h2>
+<h2 id="sec:example-usage-of-rand"><span class="section-number main-number">26</span> Example: Usage of <code>RAND()</code></h2>
 <p>Randomly generate a number between 0 and 1.</p>
 <p><strong>Howto:</strong></p>
 <ul>
@@ -801,7 +799,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </ul>
 <p>Alternatively, you may also manually enter the function: <code>=rand()</code> in the cell and hit enter.</p>
 <hr />
-<h2 id="sec:example-usage-of-randbetween"><span class="section-number main-number">25</span> Example: Usage of <code>RANDBETWEEN()</code></h2>
+<h2 id="sec:example-usage-of-randbetween"><span class="section-number main-number">27</span> Example: Usage of <code>RANDBETWEEN()</code></h2>
 <p>Generate 10 random integers of 2 digits.</p>
 <p><strong>Howto:</strong></p>
 <ul>
@@ -816,7 +814,7 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-usage-of-randarray"><span class="section-number main-number">26</span> Example: Usage of <code>RANDARRAY()</code></h2>
+<h2 id="sec:example-usage-of-randarray"><span class="section-number main-number">28</span> Example: Usage of <code>RANDARRAY()</code></h2>
 <p>Generate 10 random integers of 2 digits without repetition.</p>
 <p><strong>Howto:</strong></p>
 <p>In the cell with 9 empty cells below it, say <code>A1</code>, apply the Excel function <code>=UNIQUE(RANDARRAY(10, 1, 10, 99, TRUE))</code>. You will get a column array of 10 integers without duplication.</p>
@@ -834,33 +832,27 @@ Teachers and students do not know which version is “new” vs. “standard” 
 </li>
 </ol>
 <hr />
-<h2 id="sec:install-the-analysis-toolpak-optional"><span class="section-number main-number">27</span> Install the Analysis ToolPak (Optional)</h2>
-<p>If you have a desktop version Excel, you may install the Excel add-in, Analysis Toolpak which is frequently used for analyzing data.</p>
-<ul>
-<li>
-<p>To install the add-in <code>The Analysis ToolPak</code>:</p>
-<ul>
-<li>
-<p>Step 1: In the Excel menu bar, select Home.</p>
-</li>
-<li>
-<p>Step 2: Choose and click options</p>
-</li>
-<li>
-<p>Step 3: In the popup window, choose and click Add-ins.</p>
-</li>
-<li>
-<p>Step 4: In the new display, look for Manage: Excel Add-ins and click Go next to it.</p>
-</li>
-<li>
-<p>Step 5: In the new popup windows, select The Analysis ToolPak and then click the OK button.</p>
-</li>
-</ul>
-</li>
-</ul>
+<!-- 
+## Install the Analysis ToolPak (Optional)
+
+If you have a desktop version Excel, you may install the Excel add-in, Analysis Toolpak which is frequently used for analyzing data.
+
+- To install the add-in `The Analysis ToolPak`:
+
+  - Step 1: In the Excel menu bar, select Home.
+  
+  - Step 2: Choose and click options
+  
+  - Step 3: In the popup window, choose and click Add-ins.
+  
+  - Step 4: In the new display, look for Manage: Excel Add-ins and click Go next to it.
+  
+  - Step 5: In the new popup windows, select The Analysis ToolPak and then click the OK button. -->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/snap.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils@1.14.24/js/key-buttons.min.js,npm/@xiee/utils@1.14.24/js/external-link.min.js,npm/@xiee/utils@1.14.24/js/heading-anchor.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/key-buttons.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/external-link.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/heading-anchor.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/mathjax-config.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 <script>
