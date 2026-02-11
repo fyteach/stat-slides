@@ -74,7 +74,7 @@ div.footmark {
   margin-block-start: 0;
   margin-block-end: 0;
   display: flex;
-  font-size: 0.7em;
+  font-size: 0.6em;
   width: 100%;
   bottom: 0em;
   padding: 0 3em 0 2em;
@@ -134,9 +134,9 @@ table thead th { padding: 0 0.25em; }
 
 .slide-container .slide {
   background-image: url(by-nc-sa.svg);
-  background-size: auto 0.7em;
+  background-size: auto 0.5em;
   background-repeat: no-repeat;
-  background-position: left 1em bottom 0em;
+  background-position: left 1em bottom 0.1em;
   background-attachment: local;
 }
 

@@ -305,7 +305,7 @@ The mean is `r round(mean(actor_age$Age),1)`. The sample standard deviation is `
 ## Example: Mean and SD - Calculation By Hand
 
 ::: {.iframecontainer}
-<iframe src="https://www.geogebra.org/material/iframe/id/DS6PUaXy/width/1300/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
+<iframe src="https://www.geogebra.org/material/iframe/id/DS6PUaXy/width/1300/height/800/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -341,7 +341,7 @@ Find the standard deviation of this sample.
 - When we multiply values in a data set by a factor $k$, the mean and the standard deviation both scale by the factor $k$.
 
 ::: {.iframecontainer, style="height: 40vh;"}
-<iframe src="https://www.geogebra.org/material/iframe/id/r25rDxYZ/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
+<iframe src="https://www.geogebra.org/material/iframe/id/r25rDxYZ/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -353,7 +353,7 @@ Source: https://www.geogebra.org/m/r25rDxYZ
 ## Effect of Changes of Data
 
 ::: {.iframecontainer}
-<iframe src="https://www.geogebra.org/material/iframe/id/fenbj3qZ/width/910/height/628/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen title="MyOpenMath question 251836"></iframe>
+<iframe src="https://www.geogebra.org/material/iframe/id/fenbj3qZ/width/910/height/628/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="100%" height="80%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}

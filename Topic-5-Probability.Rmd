@@ -48,7 +48,7 @@ library(knitr)
 ## Example: Chance Event
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://seeing-theory.brown.edu/basic-probability/index.html#section1",height="560px")`
+<iframe src="https://seeing-theory.brown.edu/basic-probability/index.html#section1" width="100%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -166,7 +166,7 @@ The event $E$ of getting 2 heads contains only one outcome: head and head. So th
 ## Empirical vs Theoretical: Coin Flip Simulation
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.geogebra.org/material/iframe/id/112248", height="440px")`
+<iframe src="https://www.geogebra.org/material/iframe/id/112248" width="100%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -187,16 +187,16 @@ Source: [GeoGebra](http://ggbtu.be/mLZbwMZtJ) License: [CC BY SA](http://creativ
 
 ---
 
-## Law of Large Numbers by a Coin Flipping Simulation
+## Law of Large Numbers Simulation
 
 <!-- Source: [The University of Chicago School Mathematics Project](http://ucsmp.uchicago.edu/secondary/applets/law-of-large-numbers/) -->
 
 ::: {.iframecontainer}
-`r knitr::include_url("http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html", height="480px")`
+<iframe src="https://stapplet.com/largenum.html" width="100%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
-Source: [http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html](http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html)
+Source: [https://stapplet.com/largenum.html](https://stapplet.com/largenum.html)
 :::
 
 ---
@@ -204,7 +204,7 @@ Source: [http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html](
 ## Practice: Red Light Runner {.unnumbered}
 
 ::: {.iframecontainer}
-`r include_url("https://www.myopenmath.com/embedq2.php?id=7088&seed=2020&showansafter")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7088&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 7088"></iframe>
 :::
 
 ---
@@ -312,7 +312,7 @@ $$P(E)=1-P(E^c)=\frac{11}{12}.$$
 ## Practice: Spinner with 12 Numbers {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=7107&seed=2020&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7107&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 7107"></iframe>
 :::
 
 ---
@@ -320,7 +320,7 @@ $$P(E)=1-P(E^c)=\frac{11}{12}.$$
 ## Practice: M&M with a specific color {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=34681&seed=2020&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=34681&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 34681"></iframe>
 :::
 
 ---
@@ -403,7 +403,7 @@ $P(\text{heart or face})=P(\text{heart})+P(\text{face})-P(\text{heart and face})
 ## Practice: Addition Rule {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=67988&seed=2020&showansafter", height="500px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=67988&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 67988"></iframe>
 :::
 
 ---
@@ -574,7 +574,7 @@ $$
 ## Practice: Guess a Password {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=34710&seed=2020&showansafter", height="550px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=34710&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 34710"></iframe>
 :::
 
 ---
@@ -597,7 +597,7 @@ Source: [https://saylordotorg.github.io/text_introductory-statistics/s07-03-cond
 ## Practice: Conditional Probability Subject to Complement {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=7151&seed=2020&showansafter", height="550px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7151&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 7151"></iframe>
 :::
 
 ---
@@ -615,5 +615,5 @@ A box contains 10 pens, 6 black and 4 red. Two pens are drawn without replacemen
 ## Practice: Rules of Probability {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://www.myopenmath.com/embedq2.php?id=162779&seed=2020&showansafter", height="550px")`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=162779&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 162779"></iframe>
 :::

@@ -65,7 +65,7 @@ set.seed(923)
 ::: {.pull-left}
 - **Positive relationship**: the response variable (y) increases when the explanatory variable (x) increases.
 
-```{r grade, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.align = 'center', fig.width=6, fig.asp=1}
+```{r grade, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1, fig.cap=""}
  load("Data-Frames-SUNY-Concepts-in-Statistics/gradebook.rdata")
  gradebook <- rename(data)
  ggplot(head(gradebook,20), aes(x=Midterm1, y=Final)) +
@@ -78,7 +78,7 @@ set.seed(923)
 ::: {.pull-right}
 - **Negative relationship**: the response variable (y) decreases when the explanatory variable (x) increases.
   
-```{r mtcar, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1}
+```{r mtcar, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1, fig.cap=""}
 ggplot(head(mtcars,20), aes(x=wt, y=mpg)) +
   geom_point(size = 5) +
   geom_smooth(method=lm, se=FALSE) +
@@ -94,7 +94,7 @@ ggplot(head(mtcars,20), aes(x=wt, y=mpg)) +
 :::: {.row}
 ::: {style="width: 33%;"}
 
-```{r cellphone, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1}
+```{r cellphone, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1, fig.cap=""}
 load("Data-Frames-SUNY-Concepts-in-Statistics/cell_phones.RData")
 cellphone <- rename(data)
 ggplot(na.omit(head(cellphone,20)), aes(x=Math, y=Verbal)) +
@@ -108,7 +108,7 @@ ggplot(na.omit(head(cellphone,20)), aes(x=Math, y=Verbal)) +
 
 ::: {style="width: 33%;"}
 
-```{r Anscombe, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1}
+```{r Anscombe, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1, fig.cap=""}
 Anscombe.II.x<- c(10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0)
 Anscombe.II.y<- c(9.14, 8.14, 8.74, 8.77, 9.26, 8.10, 6.13, 3.10, 9.13, 7.26, 4.74)
 Anscombe.data <- data.frame(Anscombe.II.x, Anscombe.II.y)
@@ -123,7 +123,7 @@ ggplot(Anscombe.data, aes(x=Anscombe.II.x, y=Anscombe.II.y)) +
 
 ::: {style="width: 33%;"}
 
-```{r datAB, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1}
+```{r datAB, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=6, fig.asp=1, fig.cap=""}
 set.seed(955)
 dat <- data.frame(cond = rep(c("A", "B"), each=10),
                   xvar = 1:10 + rnorm(20,sd=2),
@@ -148,7 +148,7 @@ The strength of the relationship is a description of how closely the data follow
 
 ::::: {.row}
 :::: {.pull-left}
-```{r rstong, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7, fig.asp=1}
+```{r rstong, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7, fig.asp=1, fig.cap=""}
 x1  <- rnorm(n = 100, mean = 1, sd = 2)
 v1  <- rnorm(n = 100, mean = 0, sd = 3)
 m1 <- sd(v1)
@@ -171,7 +171,7 @@ g1 +
 ::::
 
 :::: {.pull-right}
-```{r rweak, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7, fig.asp=1}
+```{r rweak, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7, fig.asp=1, fig.cap=""}
 x2  <- x1
 v2  <- rnorm(n = 100, mean = 0, sd = 3)
 m2 <- sd(v1)
@@ -200,7 +200,7 @@ g2 +
 
 Outliers are points that deviate from the pattern of the relationship.
 
-```{r outlier, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1}
+```{r outlier, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1, fig.cap=""}
 xx  <- rnorm(n = 100, mean = 0, sd = 1.5)
 yy  <- (xx-mean(xx)) + rnorm(n = 100, mean = 0, sd = 0.2)
 outlier_index <- sample(1:100, 1)
@@ -291,7 +291,7 @@ See the paper [Thirteen Ways to Look at the Correlation Coefficient](https://www
 
 ::: {.pull-left}
 
-```{r AnscombeLM, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1}
+```{r AnscombeLM, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1, fig.cap=""}
 Anscombe.I.x<- c(10.00,8.00,13.00,9.00,11.00,14.00,6.00,4.00,12.00,7.00,5.00)
 Anscombe.I.y<- c(8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68)
 Anscombe.data <- data.frame(Anscombe.I.x, Anscombe.I.y)
@@ -312,7 +312,7 @@ p1 +   ggtitle(TeX(text1)) +
 
 ::: {.pull-right}
 
-```{r datABLM, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1}
+```{r datABLM, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=7.5, fig.asp=1, fig.cap=""}
 set.seed(955)
 dat <- data.frame(cond = rep(c("A", "B"), each=10),
                   xvar = 1:10 + rnorm(20,sd=2),
@@ -375,7 +375,7 @@ After discussing regression lines, you will see why $r^2\le 1$ and $r$ measures 
 ## Practice: Guess the Correlation Coefficient {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url("https://istats.shinyapps.io/guesscorr/", height="550px")`
+<iframe src="https://istats.shinyapps.io/guesscorr/" width="100%" height="80%" loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -393,7 +393,7 @@ Describe the relationship between Midterm 1 and Final for a sample of 10 student
 
 **Solution:** First we create a scatterplot.
 
-```{r cor_grade, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=4, fig.asp=1}
+```{r cor_grade, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=4, fig.asp=1, fig.cap=""}
 ggplot(gradebook[20:30,c("Midterm1", "Final")], aes(x=Midterm1, y=Final)) +
   geom_point(size = 5) +
   geom_smooth(method=lm, se=FALSE) +
@@ -456,7 +456,7 @@ $\dfrac{\sum z_xz_y}{n-1}$, where $z_x=\frac{x-\bar{x}}{s_x}$ and $z_y=\frac{y-\
 ## Practice: Calculate Correlation Coefficient {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=1716&seed=2020&showansafter')`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=1716&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 1716"></iframe>
 :::
 
 ---
@@ -503,7 +503,7 @@ Source: [Causation and Lurking Variables in Concepts in Statistics for more exam
 ## Practice: Lurking Variable {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=584887&seed=2020&showansafter')`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=584887&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 584887"></iframe>
 :::
 
 ---
@@ -548,7 +548,7 @@ kable(cbind(spring1,spring2),
 ::::
 
 ::: {.pull-right}
-```{r scatter_geyser, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=5, fig.asp=1}
+```{r scatter_geyser, echo=FALSE, result='asis', message=FALSE, fig.align = 'center', fig.width=5, fig.asp=1, fig.cap=""}
 spring <- faithful[12:21, c("eruptions", "waiting")]
 ggplot(spring, aes(y=waiting, x=eruptions)) +
   geom_point(size = 5) +
@@ -581,7 +581,7 @@ The residual is $y-\hat{y}=`r spring[10, ]$waiting`-`r ypred`=`r error=spring[10
 ## Practice: Find Regression Line {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=902994&seed=2020&showansafter')`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=902994&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 902994"></iframe>
 :::
 
 ---
@@ -683,7 +683,7 @@ kable(GradeBook,
 ## Practice: Analyzing Linear Relationship {.unnumbered}
 
 ::: {.iframecontainer}
-`r knitr::include_url('https://www.myopenmath.com/embedq2.php?id=905035&seed=2020&showansafter')`
+<iframe src="https://www.myopenmath.com/embedq2.php?id=905035&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 905035"></iframe>
 :::
 
 ---
