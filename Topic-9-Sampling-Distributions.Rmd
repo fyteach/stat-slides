@@ -20,7 +20,13 @@ output:
 ---
 
 ```{r, echo=FALSE, warning=FALSE}
-knitr::opts_chunk$set(comment="#", fig.retina=2, crayon.enabled = TRUE)
+knitr::opts_chunk$set(
+  comment="#", 
+  fig.retina=2, 
+  crayon.enabled = TRUE,
+  out.width = "100%",   # use % so the grepl("%$") check is TRUE
+  screenshot.force = FALSE
+  )
 set.seed(15)
 library(knitr)
 library(ggplot2)
@@ -167,7 +173,7 @@ The following are the distribution of the population and the distribution of sam
 :::: {.pull-left}
 ::: {.center}
 
-```{r echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.8}
+```{r smapling_dist_small_1, echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.8, out.width = "80%", fig.cap = "Population Distribution"}
 
 pop <- c(1,3,4)
 
@@ -175,9 +181,9 @@ popdf <- data.frame(pop)
 
 colnames(popdf) <- c("x")
 
-popplot <- ggplot(popdf, aes(x=x), dpi=600) +
+popplot <- ggplot(popdf, aes(x=x)) +
   geom_histogram(aes(y=after_stat(density)),bins=3,fill="lightblue", col="white") +
-  theme_bw(base_size = 12) +
+  theme_bw(base_size = 18) +
 geom_vline(aes(xintercept=mean(x)),       color="blue", linetype="dashed")+
 labs(x = TeX('$x$'), y = "rel. freq.")
 
@@ -188,7 +194,7 @@ popplot
 :::: {.pull-right}
 ::: {.center}
 
-```{r echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.8}
+```{r smapling_dist_small_2, echo=FALSE, results = 'asis', fig.width=8, fig.asp=0.8, out.width = "80%", fig.cap = "Sampling Distribution"}
 
 samplemean <- c(1,2,2.5,2,3,3.5,2.5,3.5,4)
 
@@ -196,9 +202,9 @@ smdf <- data.frame(samplemean)
 
 colnames(smdf) <- c("xbar")
 
-clt <- ggplot(smdf, aes(x=xbar), dpi=600) +
+clt <- ggplot(smdf, aes(x=xbar)) +
   geom_histogram(aes(y=after_stat(density)), bins=4,fill="lightblue", col="white") +
-  theme_bw(base_size = 12) +
+  theme_bw(base_size = 18) +
 geom_vline(aes(xintercept=mean(xbar)),       color="blue", linetype="dashed")+
 labs(x = TeX('$\\bar{X}$'), y = "rel. freq.")
 
