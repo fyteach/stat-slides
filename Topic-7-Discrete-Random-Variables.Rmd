@@ -20,7 +20,13 @@ output:
 ---
 
 ```{r, echo=FALSE, warning=FALSE}
-knitr::opts_chunk$set(comment="#", fig.retina=2, crayon.enabled = TRUE)
+knitr::opts_chunk$set(
+  comment="#", 
+  fig.retina=2, 
+  crayon.enabled = TRUE,
+  out.width = "100%",   # use % so the grepl("%$") check is TRUE
+  screenshot.force = FALSE
+  )
 set.seed(15)
 library(knitr)
 library(ggplot2)
@@ -121,14 +127,14 @@ $$P(X\leq 2)= P(X=0)+P(X=1)+P(X=2)=0.25+0.5+0.25=1.$$
 The probability distribution of an unfair coin is characterized by the following histogram. Find the probability of getting at most 1 head.
 ::: {.center}
 
-```{r echo=FALSE, fig.height = 3.5, fig.width = 5}
+```{r hist_unfair_coin, echo=FALSE, fig.height = 1.5, fig.width = 3, out.width = "40%", fig.cap = "", dpi = 100}
 set.seed(10)
 unfaircoin <- data.frame(Heads=rbinom(1000, 2, prob=0.4))
 
 freqtb <- as.data.frame(table(unfaircoin$Heads))
 prob<-round(freqtb$Freq/sum(freqtb$Freq),2)
 
-ggplot(unfaircoin, aes(x=Heads), dpi=600) +
+ggplot(unfaircoin, aes(x=Heads)) +
   geom_histogram(aes(y=after_stat(count) / sum(count)), binwidth=1, fill="lightblue", col="white")+
   labs(y = "Probability")+
   stat_bin(
@@ -138,7 +144,7 @@ ggplot(unfaircoin, aes(x=Heads), dpi=600) +
     geom="text",
     vjust=1.2
     )+
-theme_bw(base_size = 12) +
+theme_bw(base_size = 10) +
 theme(panel.grid=element_blank())
 ```
 
@@ -304,7 +310,7 @@ where $n! = n(n-1)\cdots 1$, read as $n$ factorial, for $n>0$. We set $0! = 1.$
 
 ## Example: Multiple Cards Drawing (1 of 2)
 
-A card is randomly selected from a standard deck and replaced. This experiment is repeated a total of $5$ times.
+A card is randomly selected from a standard deck and replaced. This experiment is repeated $5$ times.
 
 - Find the probability of getting exactly $3$ clubs.
 - Find the probability of getting at least $3$ clubs.
@@ -327,22 +333,20 @@ The probability $P(X=3)$ can also be found by using the Excel function `BINOM.DI
 
 To probability of getting at least $3$ club is
 $$\textstyle P(X\geq 3) =1-P(X\leq 2)=1-(P(0)+P(1)+P(2))\approx 1-0.8965=0.1035.$$
-
 To calculate $P(X\leq 2)$, there are two methods.
 
 **Method 1:** In Excel, $P(X\le 2)$ `=BINOM.DIST(2,5,0.25,TRUE)` $\approx 0.8965$.
 
-**Method 1:** As $n=5$ and $p=0.25$, we use the following portion of the cumulative binomial distribution table.
+**Method 2:** Use the binomial distribution table for $n=5$ and $p=0.25$.
 
-::: {.center style="margin-top: -1em; font-size: 0.9em;"}
+::: {.center style="margin-top: -0.2em; font-size: 0.9em;"}
 Binomial Probability Table *n=5*
-
 | n    | x    | 0.1    | 0.15   | 0.2    | 0.25   | 0.3    | 0.35   | 0.4    |
 | ---- | ---- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | 5    | 0    | 0.5905 | 0.4437 | 0.3277 | <span class="red">0.2373</span> | 0.1681 | 0.116  | 0.0778 |
 | 5    | 1    | 0.3281 | 0.3915 | 0.4096 | <span class="red">0.3955</span> | 0.3602 | 0.3124 | 0.2592 |
 | 5    | 2    | 0.0729 | 0.1382 | 0.2048 | <span class="red">0.2637</span> | 0.3087 | 0.3364 | 0.3456 |
-| 5    | 3    | 0.0081 | 0.0244 | 0.0512 | 0.0879 | 0.1323 | 0.1811 | 0.2304 |
+<!-- | 5    | 3    | 0.0081 | 0.0244 | 0.0512 | 0.0879 | 0.1323 | 0.1811 | 0.2304 | -->
 :::
 
 $P(X\le 2) \approx 0.2373+0.3955+0.2637= 0.8965.$

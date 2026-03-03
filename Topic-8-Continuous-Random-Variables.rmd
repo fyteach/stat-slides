@@ -21,7 +21,13 @@ output:
 
 
 ```{r, echo=FALSE, warning=FALSE}
-knitr::opts_chunk$set(comment="#", fig.retina=2, crayon.enabled = TRUE)
+knitr::opts_chunk$set(
+  comment="#", 
+  fig.retina=2, 
+  crayon.enabled = TRUE,
+  out.width = "100%",   # use % so the grepl("%$") check is TRUE
+  screenshot.force = FALSE
+  )
 set.seed(15)
 library(knitr)
 library(ggplot2)
@@ -43,7 +49,7 @@ library(latex2exp)
 The probability distribution of a continuous random variable $X$ is characterized by its **probability density function** $f(X)$ satisfying that the probability $P(a\leq X\leq b)$ equals the area above the interval $[a, b]$ but under the graph of the density function $f(X)$ which is also called a **density curve**.
 
 ::: {.center}
-```{r echo=FALSE, fig.width=8, fig.asp=0.5, warning=FALSE}
+```{r uniform_dist, echo=FALSE, fig.width=5, fig.asp=0.5, warning=FALSE, out.width = "40%", fig.cap = ""}
 puniform <- ggplot(
     data = data.frame(x = c(-0.5, 0.5)), aes(x)
   ) +
@@ -104,7 +110,7 @@ puniform <- ggplot(
     axis.title.x = element_text(
       margin = margin(t = -20),
       hjust=0.95,
-      size=24
+      size=18
     ),
     axis.text.x = element_text(size=28)
   ) +
@@ -119,7 +125,7 @@ puniform <- ggplot(
 
 puniform
 ```
-```{r echo=FALSE, fig.width=8, fig.asp=0.5, warning=FALSE}
+```{r normal_dist, echo=FALSE, fig.width=5, fig.asp=0.5, warning=FALSE, out.width = "40%", fig.cap = ""}
 pnormal <- ggplot(
     data = data.frame(x = c(-3, 3)), aes(x)
   ) +
@@ -162,7 +168,7 @@ pnormal <- ggplot(
     axis.title.x = element_text(
       margin = margin(t = -20),
       hjust=0.95,
-      size=24
+      size=18
     ),
     axis.text.x = element_text(size=25)
   ) +
