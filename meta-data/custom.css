@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@0;1&family=Noto+Sans+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue  :ital@0;1&family=Noto+Sans+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro&display=swap');
 
 body {
   font-family: 'Noto Sans', 'Open Sans', sans-serif;
@@ -209,7 +209,7 @@ table thead th { padding: 0 0.25em; }
 
 /* IMPORTANT: No global transform on MyOpenMath iframes.
    Flex fill is cleaner and avoids blurriness/overflow. */
-iframe[src^="https://www.myopenmath.com"] {
+iframe[src^="https://www.myopenmath.com  "] {
   max-width: 100%;             /* keep full width */
 }
 
@@ -241,4 +241,71 @@ mjx-container[jax="SVG"][display="true"]{
 }
 @supports not (min-height: 100dvh) and (min-height: 100svh) {
   .slide { min-height: 100svh; }
+}
+
+/* =========================================================
+   IPAD-SPECIFIC OVERRIDES: FULL-WIDTH SLIDES
+   Targets iPad devices (768px–1024px) while preserving desktop styles
+   ========================================================= */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  /* Remove body padding to maximize slide width */
+  body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Force slides to use full viewport width */
+  .slide {
+    max-width: 100% !important;
+    width: 100% !important;
+    /* Account for safe-area insets on newer iPads */
+    width: calc(100vw - env(safe-area-inset-left) - env(safe-area-inset-right)) !important;
+    max-width: calc(100vw - env(safe-area-inset-left) - env(safe-area-inset-right)) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Ensure main content area also expands fully */
+  .slide > .main {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    width: 100% !important;
+  }
+
+  /* Adjust two-column layouts for better iPad width utilization */
+  .pull-left,
+  .pull-right {
+    width: 49.5% !important;
+  }
+
+  /* Ensure footmark spans full width without side padding interference */
+  div.footmark {
+    padding: 0 1em 0 1em !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Prevent iOS text size adjustment that can disrupt layout */
+  body {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+
+  /* Ensure iframes and containers fill available width */
+  .iframecontainer,
+  .iframecontainer iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Optional: Slightly reduce font scaling for dense content on iPad */
+  .part {
+    font-size: 180% !important;
+  }
 }
