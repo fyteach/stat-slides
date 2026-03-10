@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="generator" content="litedown 0.9.2">
-<title>Topic 6: Two-Way Tables</title>
+<title>Discrete Random Variables</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/css/default.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/css/snap.min.css">
 <style type="text/css">
@@ -257,7 +257,7 @@ mjx-container[jax="SVG"][display="true"]{
 </head>
 <body>
 <div class="frontmatter">
-<div class="title"><h1>Topic 6: Two-Way Tables</h1></div>
+<div class="title"><h1>Discrete Random Variables</h1></div>
 <div class="author"><h2>Fei Ye</h2></div>
 <div class="date"><h3>March 2026</h3></div>
 </div>
@@ -265,628 +265,487 @@ mjx-container[jax="SVG"][display="true"]{
 <h2 id="sec:learning-goals"><span class="section-number main-number">1</span> Learning Goals</h2>
 <ul>
 <li>
-<p>Summarize and interpret the relationship between two qualitative (categorical) variables using two-way tables.</p>
+<p>Demonstrate understanding of random variables</p>
 </li>
 <li>
-<p>Demonstrate understanding and find conditional, joint and marginal probability from a two-way frequency table.</p>
+<p>Demonstrate understanding of characteristics of binomial distributions.</p>
 </li>
 <li>
-<p>Create and analyze two-way table to answer probability questions.</p>
+<p>Calculate accurate probabilities of discrete random variables and interpret them in a variety of settings.</p>
 </li>
 </ul>
 <hr />
-<h2 id="sec:two-way-frequency-tables"><span class="section-number main-number">2</span> Two-way Frequency Tables</h2>
+<h2 id="sec:random-variables"><span class="section-number main-number">2</span> Random Variables</h2>
 <ul>
 <li>
-<p>As we organize and analyze data from two categorical variables, we make use of two-way tables.</p>
+<p>A <strong>random variable</strong>, usually written \(X\), is a variable whose values are numerical quantities of possible outcomes from a random experiment.</p>
 </li>
 <li>
-<p>Information in a <strong>two-way frequency table</strong>:</p>
+<p>A <strong>discrete random variable</strong> takes on only a finite or countable number of distinct values.</p>
+<p><strong>Example:</strong></p>
 <ul>
-<li>
-<p>Values of the two variables are displayed in the left column and the top row.</p>
-</li>
-<li>
-<p>The body of table consists of frequency counts associated to pairs of values of the two variables.</p>
-</li>
-<li>
-<p>The right column and the bottom row, which are called margins of the table, consists of row totals and column totals respectively.</p>
-</li>
+<li>Rolling a fair dice, the number of dots on the top faces is a discrete random variable takes on the possible values: 1, 2, 3, 4, 5, 6.</li>
 </ul>
 </li>
 <li>
-<p>A number in a margin are called <strong>marginal frequency</strong>.</p>
-</li>
-<li>
-<p>A number in the body of the table is called <strong>joint frequency</strong>.</p>
+<p>A <strong>continuous random variable</strong> takes on values which form an interval of numbers.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>The measure the voltage at a randomly electrical outlet normally is between 118 and 122. SO the measure of voltage is a continuous random variable.</li>
+</ul>
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-body-image-and-gender"><span class="section-number main-number">3</span> Example: Body Image and Gender</h2>
-<p>The following table summarize responses of a random sample of 1,200 U.S. college students as part of a larger survey.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">About Right</th>
-<th align="center">Overweight</th>
-<th align="center">Underweight</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Female</td>
-<td align="center">560</td>
-<td align="center">163</td>
-<td align="center">37</td>
-<td align="center">760</td>
-</tr>
-<tr>
-<td align="left">Male</td>
-<td align="center">295</td>
-<td align="center">72</td>
-<td align="center">73</td>
-<td align="center">440</td>
-</tr>
-<tr>
-<td align="left">Column Totals</td>
-<td align="center">855</td>
-<td align="center">235</td>
-<td align="center">110</td>
-<td align="center">1,200</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/two-way-tables-1-of-5/">https://courses.lumenlearning.com/wmopen-concepts-statistics</a></p>
-</div>
-<hr />
-<h2 id="sec:two-way-relative-frequency-tables-and-probability"><span class="section-number main-number">4</span> Two-Way Relative Frequency Tables and Probability</h2>
-<div style="font-size:0.9em;">
-<ul>
-<li>A <strong>two-way relative frequency table:</strong> two-way table with relative frequencies.</li>
-<li><strong>Marginal probability:</strong> $$P(X)=\frac{\text{Marginal frequency in}~ X}{\text{Total}}.$$</li>
-<li><strong>Conditional probability:</strong> $$P(X|Y)=\frac{\text{Joint frequency}}{\text{Marginal Frequency in}~Y} \quad \text{or}\quad P(Y|X)=\frac{\text{Joint frequency}}{\text{Marginal Frequency in}~X}.$$</li>
-<li><strong>Joint probability:</strong> $$P(X ~\text{and}~ Y)=\frac{\text{Joint frequency}}{\text{Total}}.$$</li>
-<li>Note that \(P(X~\text{and}~Y)=P(X)\cdot P(Y|X)=P(Y)\cdot P(X|Y).\)</li>
-</ul>
-</div>
-<hr />
-<h2 id="sec:example-probabilities-about-body-and-gender"><span class="section-number main-number">5</span> Example: Probabilities about Body and Gender</h2>
-<p>The following table shows joint and marginal probabilities of body image and gender.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">About Right</th>
-<th align="center">Overweight</th>
-<th align="center">Underweight</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Female</td>
-<td align="center">\(\frac{560}{1200}=46.67\%\)</td>
-<td align="center">\(\frac{163}{1200}=13.58\%\)</td>
-<td align="center">\(\frac{37}{1200}=3.08\%\)</td>
-<td align="center">\(\frac{760}{1200}=63.33\%\)</td>
-</tr>
-<tr>
-<td align="left">Male</td>
-<td align="center">\(\frac{295}{1200}=24.58\%\)</td>
-<td align="center">\(\frac{72}{1200}=6.00\%\)</td>
-<td align="center">\(\frac{73}{1200}=6.08\%\)</td>
-<td align="center">\(\frac{440}{1200}=36.67\%\)</td>
-</tr>
-<tr>
-<td align="left">Column   Totals</td>
-<td align="center">\(\frac{855}{1200}=71.25\%\)</td>
-<td align="center">\(\frac{235}{1200}=19.58\%\)</td>
-<td align="center">\(\frac{110}{1200}=9.17\%\)</td>
-<td align="center">\(\frac{1200}{1200}=100.00\%\)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The following table shows probabilities of randomly select male or female who has a certain body image.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">About Right</th>
-<th align="center">Overweight</th>
-<th align="center">Underweight</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Female</td>
-<td align="center">\(\frac{560}{760}=73.68\%\)</td>
-<td align="center">\(\frac{163}{760}=21.45\%\)</td>
-<td align="center">\(\frac{37}{760}=4.87\%\)</td>
-<td align="center">\(\frac{760}{760}=100.00\%\)</td>
-</tr>
-<tr>
-<td align="left">Male</td>
-<td align="center">\(\frac{295}{440}=67.05\%\)</td>
-<td align="center">\(\frac{72}{440}=16.36\%\)</td>
-<td align="center">\(\frac{73}{440}=16.59\%\)</td>
-<td align="center">\(\frac{440}{440}=100.00\%\)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr />
-<h2 id="sec:example-community-college-enrollment-1-of-2"><span class="section-number main-number">6</span> Example: Community College Enrollment (1 of 2)</h2>
-<p>The following table summarizes the full-time enrollment at a community college.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th></th>
-<th align="center">Arts-Sci</th>
-<th align="center">Bus-Econ</th>
-<th align="center">Info Tech</th>
-<th align="center">Health Science</th>
-<th align="center">Graphics Design</th>
-<th align="center">Culinary Arts</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Female</td>
-<td align="center">4,660</td>
-<td align="center">435</td>
-<td align="center">494</td>
-<td align="center">421</td>
-<td align="center">105</td>
-<td align="center">83</td>
-<td align="center">6,198</td>
-</tr>
-<tr>
-<td>Male</td>
-<td align="center">4,334</td>
-<td align="center">490</td>
-<td align="center">564</td>
-<td align="center">223</td>
-<td align="center">97</td>
-<td align="center">94</td>
-<td align="center">5,802</td>
-</tr>
-<tr>
-<td>Column Totals</td>
-<td align="center">8,994</td>
-<td align="center">925</td>
-<td align="center">1,058</td>
-<td align="center">644</td>
-<td align="center">202</td>
-<td align="center">177</td>
-<td align="center">12,000</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>What proportion of the total number of students are male students?</li>
-</ul>
-<p><strong>Solution:</strong>
-\(P(\text{Male})=\dfrac{5802}{12000}\approx 0.4835=48.35\%.\)</p>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/two-way-tables-2-of-5/">https://courses.lumenlearning.com/wmopen-concepts-statistics</a></p>
-</div>
-<hr />
-<h2 id="sec:example-community-college-enrollment-2-of-2"><span class="section-number main-number">7</span> Example: Community College Enrollment (2 of 2)</h2>
-<ul>
-<li>If we select a male student at random, what is the probability that he is in the Info Tech program?</li>
-</ul>
-<p><strong>Solution:</strong>
-\(P(\text{Info Tech}|\text{Male})=\dfrac{564}{5802}\approx 0.097=9.7\%.\)</p>
-<ul>
-<li>If we select a student at random, what is the probability that the student is both a male and in the Info Tech program?</li>
-</ul>
-<p><strong>Solution:</strong>
-\(P(\text{Male and Info Tech})=\dfrac{564}{12000}= 0.047=4.7\%.\)</p>
-<ul>
-<li>The probabilities are related:</li>
-</ul>
-<p><strong>Solution:</strong>
-\(P(\text{Male and Info Tech})=\dfrac{564}{12000}=\dfrac{5802}{12000}\cdot \dfrac{564}{5802}=P(\text{Male})\cdot P(\text{Info Tech}|\text{Male}).\)</p>
-<hr />
-<h2 id="sec:practice-weights-and-heights" class="unnumbered">Practice: Weights and Heights</h2>
-<div class="row">
-<div class="pull-left">
-<p>This table on the right relates the weights and heights of a group of individuals participating in an observational study.</p>
-</div>
-<div class="pull-right">
-<div class="center" style="margin-top:-1em;">
-<table>
-<thead>
-<tr>
-<th align="center">Weight/Height</th>
-<th align="center">Tall</th>
-<th align="center">Medium</th>
-<th align="center">Short</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Obese</td>
-<td align="center">18</td>
-<td align="center">28</td>
-<td align="center">14</td>
-</tr>
-<tr>
-<td align="center">Normal</td>
-<td align="center">20</td>
-<td align="center">51</td>
-<td align="center">28</td>
-</tr>
-<tr>
-<td align="center">Underweight</td>
-<td align="center">12</td>
-<td align="center">25</td>
-<td align="center">9</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
+<h2 id="sec:practice-discrete-or-continuous" class="unnumbered">Practice: Discrete or continuous</h2>
+<p>Classify each random variable as either discrete or continuous.</p>
 <ol>
-<li>Find the total for each row and column</li>
-<li>Find the probability that a randomly chosen individual from this group is Short.</li>
-<li>Find the probability that a randomly chosen individual from this group is Obese and Short.</li>
-<li>Find the probability that a randomly chosen individual from this group is Underweight given that the individual is Tale.</li>
+<li>
+<p>The number of boys in a randomly selected three-child family.</p>
+</li>
+<li>
+<p>The temperature of a cup of coffee served at a restaurant.</p>
+</li>
+<li>
+<p>The number of math majors in randomly selected group of 10 students.</p>
+</li>
+<li>
+<p>The amount of rain recorded in a small town one day.</p>
+</li>
 </ol>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/introstats1/chapter/contingency-tables/">https://courses.lumenlearning.com/introstats1/chapter/contingency-tables/</a></p>
-</div>
 <hr />
-<h2 id="sec:test-of-no-association"><span class="section-number main-number">8</span> Test of (No) Association</h2>
+<h2 id="sec:probability-distributions"><span class="section-number main-number">3</span> Probability Distributions</h2>
 <ul>
 <li>
-<p>To understand association between categorical variables, we may think conversely. How do we test no association?</p>
+<p>The <strong>probability distribution</strong> of a discrete random variable \(X\) is defined by the probability \(P(X=x)\) associated with each possible value \(x\) of the variable \(X\). The function \(p_X(x)=P(X=x)\) is called the <strong>probability mass function</strong>.</p>
 </li>
 <li>
-<p>If the conditional probabilities are nearly equal for all categories, there may be no association between the variables. Conversely, if the conditional probabilities are different enough, we are confidence to say there is an association.</p>
+<p>A probability distribution of a discrete random variable is usually characterized by a table of all possible values \(X\) together with probabilities \(P(X)\), or a probability histogram, or a formula.</p>
 </li>
 <li>
-<p>In general, the bigger the differences in the conditional probabilities, the stronger the association between the variables.</p>
-</li>
-<li>
-<p>Two variables \(X\) and \(Y\) are <strong>independent</strong> if \(P(X~\text{and}~Y)=P(X)\cdot P(Y)\). Equivalently, \(P(X|Y)=P(X)\) and \(P(Y|X)=P(Y)\).</p>
+<p>A random variable \(X\) (discrete and continuous) always has a <strong>cumulative distribution function</strong>: \(F_X(x)=P(X\leq x)\) (= \(\sum\limits_{x_i\leq x} P(x_i)\) if \(X\) is discrete).</p>
 </li>
 </ul>
 <hr />
-<h2 id="sec:example-association-between-body-and-gender-1-of-2"><span class="section-number main-number">9</span> Example: Association Between Body and Gender (1 of 2)</h2>
-<p>Is body image related to gender?</p>
+<h2 id="sec:basic-properties-of-probability-distributions"><span class="section-number main-number">4</span> Basic Properties of Probability Distributions</h2>
+<ul>
+<li>
+<p>Basic rules of probability:</p>
+<ul>
+<li>
+<p>\(0\leq P(X=x)\leq 1\).</p>
+</li>
+<li>
+<p>The sum of all the probabilities is 1, that is \(P(X\leq x_{max})=1\).</p>
+</li>
+<li>
+<p>In particular, \(0\leq F_X(x)\leq 1\).</p>
+</li>
+<li>
+<p>The cumulative distribution function \(F_X(x)\) is non-decreasing.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The probability distribution can be recovered from its cumulative distribution function. Indeed, for a <em>discrete</em> random variable \(X\), we have
+$$P(X=x_i)=P(X\le x_i)-P(X\le x_{i-1}),$$
+where \(P(X\le x_i)=\sum\limits_{k=1}^i P(X=x_k)\).</p>
+</li>
+</ul>
+<hr />
+<h2 id="sec:example-distribution-of-flipping-two-fair-coins"><span class="section-number main-number">5</span> Example: Distribution of Flipping Two Fair Coins</h2>
+<p>Let \(X\) be the number of heads that are observed when tossing two fair coins.</p>
+<ol>
+<li>Construct the probability distribution for \(X\).</li>
+<li>Find \(P(X\le 1)\) and \(P(X\le 2)\).</li>
+</ol>
+<p><strong>Solution:</strong> The possible values of the number of heads are \(0\), \(1\) and \(2\). The probability distribution can be characterized by the following table:</p>
 <div class="center">
 <table>
 <thead>
 <tr>
-<th align="left"></th>
-<th align="center">About Right</th>
-<th align="center">Overweight</th>
-<th align="center">Underweight</th>
-<th align="center">Row Totals</th>
+<th>\(x\)</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Female</td>
-<td align="center">560</td>
-<td align="center">163</td>
-<td align="center">37</td>
-<td align="center">760</td>
-</tr>
-<tr>
-<td align="left">Male</td>
-<td align="center">295</td>
-<td align="center">72</td>
-<td align="center">73</td>
-<td align="center">440</td>
-</tr>
-<tr>
-<td align="left">Column Totals</td>
-<td align="center">855</td>
-<td align="center">235</td>
-<td align="center">110</td>
-<td align="center">1,200</td>
+<td>\(P(X=x)\)</td>
+<td>0.25</td>
+<td>0.5</td>
+<td>0.25</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>From the table, we may find the following cumulative distributions:
+$$P(X\leq 1)=P(X=0)+P(X=1)=0.25+0.5=0.75.$$
+$$P(X\leq 2)= P(X=0)+P(X=1)+P(X=2)=0.25+0.5+0.25=1.$$</p>
 <hr />
-<h2 id="sec:example-association-between-body-and-gender-2-of-2"><span class="section-number main-number">10</span> Example: Association Between Body and Gender (2 of 2)</h2>
-<p><strong>Solution:</strong> Using Excel (stacked bar chart), we may compare side-by-side the conditional body image distributions for females and males</p>
+<h2 id="sec:example-histogram-of-an-unfair-coin"><span class="section-number main-number">6</span> Example: Histogram of an Unfair Coin</h2>
+<p>The probability distribution of an unfair coin is characterized by the following histogram. Find the probability of getting at most 1 head.</p>
 <div class="center">
-<p><img src="data:image/png;base64,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" alt="Stacked Bar Chart for Gender and Body Images" width="75%" /></p>
+<img src="data:image/png;base64,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" alt="" width="40%" />
 </div>
-<p>As a result of our analysis, we know that the conditional distributions of body images for males and females are quite different. We can conclude that there is enough difference to believe that those two categorical variables are in fact related.</p>
-<hr />
-<h2 id="sec:percentage-reduction-of-risk"><span class="section-number main-number">11</span> Percentage Reduction of Risk</h2>
-<ul>
-<li>
-<p>When calculating the probability of a negative outcome, we often refer to the probability as a <strong>risk</strong>.</p>
-</li>
-<li>
-<p>In general, we are interested in determining how much a new treatment reduces the risk compared to a reference risk</p>
-</li>
-<li>
-<p>The <strong>percentage reduction of risk</strong> is</p>
-<p>$$\text{percentage reduction of risk}=\frac{\text{new treatment risk}-\text{reference risk}}{\text{reference risk}}.$$</p>
-</li>
-</ul>
-<hr />
-<h2 id="sec:example-physicians-health-study-1-of-2"><span class="section-number main-number">12</span> Example: Physicians’ Health Study (1 of 2)</h2>
-<p>Researchers in the Physicians’ Health Study (1989) designed a randomized double-blind experiment to determine whether aspirin reduces the risk of heart attack. Here are the final results.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"><strong>Heart Attack</strong></th>
-<th align="center"><strong>No Heart Attack</strong></th>
-<th align="center"><strong>Row Totals</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>Aspirin</strong></td>
-<td align="center">139</td>
-<td align="center">10,898</td>
-<td align="center">11,037</td>
-</tr>
-<tr>
-<td align="center"><strong>Placebo</strong></td>
-<td align="center">239</td>
-<td align="center">10,795</td>
-<td align="center">11,034</td>
-</tr>
-<tr>
-<td align="center"><strong>Column Totals</strong></td>
-<td align="center">378</td>
-<td align="center">21,693</td>
-<td align="center">22,071</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><em>Does aspirin lower the risk of having a heart attack?</em></p>
-<p><strong>Solution:</strong> We fisrt compute two conditional probabilities: \(P(\text{heart attack}|\text{aspirin})\) and \(P(\text{heart attack}|\text{placebo})\).</p>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/two-way-tables-4-of-5/">https://courses.lumenlearning.com/wmopen-concepts-statistics</a></p>
-</div>
-<hr />
-<h2 id="sec:example-physicians-health-study-2-of-2"><span class="section-number main-number">13</span> Example: Physicians’ Health Study (2 of 2)</h2>
-<ul>
-<li>The probability of a heart attack given that aspirin was taken every other day.
-$$P(\text{heart attack}|\text{aspirin}) = 139 / 11,037 = 0.013$$</li>
-<li>The probability of a heart attack given that a placebo was taken every other day.
-$$P(\text{heart attack}|\text{placebo}) = 239 / 11,034 = 0.022$$</li>
-</ul>
-<p>The result shows that taking aspirin reduced the risk from 0.022 to 0.013.</p>
-<p>The percentage reduction of risk is
+<p><strong>Solution:</strong> Let \(X\) be the number of heads. From the probability histogram, we know that \(P(X=0)=0.36\), and \(P(X=1)=0.47\).</p>
+<p>Then the probability of getting at most 1 head is
 $$
-\frac{P(\text{heart attack}|\text{aspirin})-P(\text{heart attack}|\text{placebo})}{P(\text{heart attack}|\text{placebo})}=\frac{\text{0.013}-\text{0.022}}{\text{0.022}}=\frac{-\text{0.009}}{\text{0.022}}\approx -\text{0.41}.
+P(X\le 1)=P(X=0)+P(X=1)=0.36+0.47=0.83.
 $$</p>
-<p>Therefore, we conclude that taking aspirin results in a 41% reduction in risk.</p>
 <hr />
-<h2 id="sec:hypothetical-two-way-tables"><span class="section-number main-number">14</span> Hypothetical Two-way Tables</h2>
-<p>A <strong>hypothetical two-way table</strong>, also known as a hypothetical 1000 two-way table, is a two-way table constructed from given probability conditions with 1000 as the total frequency. It can be used to answer complex probability questions.</p>
-<p>Sometimes, the total frequency can be taken to be 10,000 or a higher power of 10 so that joint frequencies are integers.</p>
-<hr />
-<h2 id="sec:example-birth-gender-prediction-1-of-3"><span class="section-number main-number">15</span> Example: Birth Gender Prediction (1 of 3)</h2>
-<p>A pregnant woman often opts to have an ultrasound to predict the gender of her baby.
-Assume the following facts are known:</p>
-<ul>
-<li>Fact 1: 48% of the babies born are female.</li>
-<li>Fact 2: The proportion of girls correctly identified is 9 out of 10.</li>
-<li>Fact 3: The proportion of boys correctly identified is 3 out of 4.</li>
-</ul>
-<p>Use the above facts to answer the following questions.</p>
+<h2 id="sec:practice-distribution-of-rolling-dice" class="unnumbered">Practice: Distribution of Rolling Dice</h2>
+<p>A pair of fair 6-sided dice were rolled. Let \(X\) denote the sum of the number of dots on the top faces.</p>
 <ol>
+<li>Construct the probability distribution of \(X\).</li>
+<li>Find the probability that \(X\) takes an odd value.</li>
+</ol>
+<hr />
+<h2 id="sec:practice-distribution-of-waiting-time" class="unnumbered">Practice: Distribution of Waiting Time</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=916595&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
+</div>
+<hr />
+<h2 id="sec:mean-and-sd-of-a-discrete-random-variable"><span class="section-number main-number">7</span> Mean and SD of a Discrete Random Variable</h2>
+<p>Let \(X\) be a discrete random variable and \(p_X(x)=P(X=x)\) the probability mass function.</p>
+<ul>
 <li>
-<p>If the examination predicts a girl, how likely the baby will be a girl?</p>
+<p>The <strong>expected value</strong> \(E(X)\) (also called <strong>mean</strong> and denoted by \(\mu\)) of the discrete random variable \(X\) is the number $$\mu=E(X)=\sum \Big[xp_X(x)\Big].$$</p>
 </li>
 <li>
-<p>If the examination predicts a boy, how likely the baby will be a boy?</p>
+<p>The <strong>variance</strong> \(\mathrm{Var}(X)\) (also denoted by \(\sigma^2\)) of the discrete random variable \(X\) is the number $$\sigma^2=\mathrm{Var(X)}=\sum \Big[(x-E(X))^2p_X(x)\Big].$$</p>
+</li>
+<li>
+<p>The <strong>standard deviation</strong> \(\sigma\) of a discrete random variable \(X\) is the square root of its variance: $$\sigma=\sqrt{\sum (x-E(X))^2p_X(x)}.$$</p>
+</li>
+</ul>
+<hr />
+<h2 id="sec:some-properties-of-expected-value-optional"><span class="section-number main-number">8</span> Some Properties of Expected Value (Optional)</h2>
+<ul>
+<li>The expected value of a linear combination two random variables \(X\) and \(Y\) is $$E(aX+bY)=aE(X)+bE(Y).$$</li>
+<li>The expected value in general is not multiplicative, that is \(E(XY)\ne E(X)E(Y)\). However, if the two random variable \(X\) and \(Y\) are <em>independent</em>, then $$E(XY)=E(X)E(Y).$$</li>
+<li>The variance of a variable \(X\) can be computed using expected values:
+$$\mathrm{Var}(X)=E(X^{2})-(E[X])^{2}.$$</li>
+<li>Let \(X\) and \(Y\) be two <em>independent</em> variables. Then
+$$\mathrm{Var}(aX+bY)=a^2\mathrm{Var}(X)+b^2\mathrm{Var}(Y)$$</li>
+</ul>
+<hr />
+<h2 id="sec:example-expected-gain"><span class="section-number main-number">9</span> Example: Expected Gain</h2>
+<p>One thousand raffle tickets are sold for $2 each. Each has an equal chance of winning. First prize is $500, second prize is $300, and third prize is $100. Find the expected value of gain, and interpret its meaning.</p>
+<p><strong>Solution:</strong> Let \(X\) denote the net gain from purchasing one ticket. The probability distribution for \(X\) is</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th>\(x\)</th>
+<th>498</th>
+<th>298</th>
+<th>98</th>
+<th>-2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(P(X=x)\)</td>
+<td>\(\frac{1}{1000}\)</td>
+<td>\(\frac{1}{1000}\)</td>
+<td>\(\frac{1}{1000}\)</td>
+<td>\(\frac{997}{1000}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The expected gain is $$E(X)= 498\cdot \frac{1}{1000}+ 298\cdot\frac{1}{1000}+98\cdot \frac{1}{1000}+(-2)\cdot \frac{997}{1000}=-1.1,$$ which means that when buying one ticket, the buyer may expect a loss of $1.1.</p>
+<hr />
+<h2 id="sec:example-expected-waiting-time-and-sd"><span class="section-number main-number">10</span> Example: Expected Waiting Time and SD</h2>
+<p>The wait times (rounded to multiples of 5) in the cafeteria at a Community College has the following probability distribution. Find the expected waiting time and the standard deviation.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th>\(x\) (minutes)</th>
+<th>5</th>
+<th>10</th>
+<th>15</th>
+<th>20</th>
+<th>25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(P(X=x)\)</td>
+<td>0.13</td>
+<td>0.25</td>
+<td>0.31</td>
+<td>0.21</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Solution:</strong> The expected waiting time is
+$$E(X)= 5\cdot 0.13 +10\cdot 0.25+15\cdot 0.31+20\cdot 0.21 + 25\cdot 0.1 = 14.5.$$
+The standard deviation is then
+$$\scriptsize\begin{aligned}\sigma=&amp;\sqrt{(5-14.5)^2\cdot 0.13 +(10-14.5)^2\cdot 0.25+(15-14.5)^2\cdot 0.31+(20-14.5)^2\cdot 0.21 + (25-14.5)^2\cdot 0.1}\\
+\approx&amp; 5.9.
+\end{aligned}$$</p>
+<hr />
+<h2 id="sec:example-distribution-of-a-unfair-die-1-of-2"><span class="section-number main-number">11</span> Example: Distribution of a Unfair Die (1 of 2)</h2>
+<p>The probability distribution of an unfair die is given in the following table.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th>\(x\)</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(P(X=x)\)</td>
+<td align="center">0.18</td>
+<td align="center">0.12</td>
+<td align="center">\(\,?\,\)</td>
+<td align="center">0.14</td>
+<td align="center">0.23</td>
+<td align="center">0.17</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>Find \(P(X=3)\).</li>
+<li>Find the mean, variance and standard deviation of this probability distribution.</li>
+</ol>
+<p><strong>Solution:</strong> Since the sum of probabilities must be 1, we know that
+$$
+P(X=3)=1-(0.18+0.12+0.14+0.23+0.17)=0.16
+$$</p>
+<hr />
+<h2 id="sec:example-distribution-of-a-unfair-die-2-of-2"><span class="section-number main-number">12</span> Example: Distribution of a Unfair Die (2 of 2)</h2>
+<p>The mean is the weighted sum
+$$
+% \scriptstyle
+\begin{aligned}
+\mu=&amp;0.18\cdot 1+0.12\cdot 2+0.16\cdot 3+0.14\cdot 4+0.23\cdot 5+0.17\cdot 6\\
+=&amp;3.63.
+\end{aligned}
+$$</p>
+<p>The variance is
+$$
+\scriptstyle
+\begin{aligned}
+\sigma^2=&amp;0.18(1-3.63)^2+0.12(2-3.63)^2+0.16(3-3.63)^2+0.14(4-3.63)^2+0.23(5-3.63)^2+0.17(6-3.63)^2\\
+=&amp;3.0331.
+\end{aligned}
+$$</p>
+<p>Therefore, the standard deviation is
+$$
+\sigma=\sqrt{\sigma^2}=\sqrt{3.0331}\approx 1.7416.
+$$</p>
+<hr />
+<h2 id="sec:practice-lottery-tickets" class="unnumbered">Practice: Lottery Tickets</h2>
+<p>Seven thousand lottery tickets are sold for $5 each. One ticket will win $2,000, two tickets will win $750 each, and five tickets will win $100 each. Let \(X\) denote the net gain from the purchase of a randomly selected ticket.</p>
+<ol>
+<li>Construct the probability distribution of \(X\).</li>
+<li>Compute the expected value \(E(X)\) of \(X\). Interpret its meaning.</li>
+<li>Compute the standard deviation \(\sigma\) of \(X\).</li>
+</ol>
+<div class="footmark">
+<p>Source: <a href="https://saylordotorg.github.io/text_introductory-statistics/s08-02-probability-distributions-for-.html">https://saylordotorg.github.io/text_introductory-statistics/s08-02-probability-distributions-for-.html</a></p>
+</div>
+<hr />
+<h2 id="sec:binomial-distribution"><span class="section-number main-number">13</span> Binomial Distribution</h2>
+<ul>
+<li>A <strong>binomial experiment</strong> is a probability experiment satisfying:
+<ol>
+<li>The experiment has a fixed number \(n\) of independent trials.</li>
+<li>Each trial has only two possible outcomes: a success (S) or a failure (F).</li>
+<li>The probability \(p\) of a success is the same for each trial.</li>
+</ol>
+</li>
+<li>A discrete random variable \(X\) counting the number of successes in the \(n\) trials is a <strong>binomial random variable</strong>. We say \(X\) has a <strong>binomial distribution</strong> with parameters \(n\) and \(p\) and write it as \(X\sim B(n, p)\).</li>
+<li>For \(X\sim B(n, p)\), the <strong>probability of getting exactly \(x\) successes in \(n\) trials</strong> is $$P(X=x)=B(x,n,p)={_n C_x} p^x(1-p)^{n-x}=\frac{n!}{(n-x)!x!}p^x(1-p)^{n-x},$$
+where \(n! = n(n-1)\cdots 1\), read as \(n\) factorial, for \(n&gt;0\). We set \(0! = 1.\)</li>
+<li>The notation \({_n C_x}=\frac{n!}{(n-x)!x!}\) denotes a <a href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a> and is read as \(n\) choose \(x\).</li>
+</ul>
+<hr />
+<h2 id="sec:example-multiple-cards-drawing-1-of-2"><span class="section-number main-number">14</span> Example: Multiple Cards Drawing (1 of 2)</h2>
+<p>A card is randomly selected from a standard deck and replaced. This experiment is repeated \(5\) times.</p>
+<ul>
+<li>Find the probability of getting exactly \(3\) clubs.</li>
+<li>Find the probability of getting at least \(3\) clubs.</li>
+</ul>
+<p><strong>Solution:</strong> This is a binomial experiment. The number to total trials is \(n=5\). The number of successes is \(3\). The chance of a success is \(p=\frac{13}{52}=\frac14\).</p>
+<p>The probability of getting exactly \(3\) clubs is \(P(X=3)\).</p>
+<p><strong>Method 1: Using the binomial probability formula</strong></p>
+<p>$$\textstyle P(X=3)=\frac{5!}{3!2!} \left(\frac{1}{4}\right)^3\left(\frac34\right)^2=10\cdot\frac{9}{4^5}\approx 0.088.$$</p>
+<p><strong>Method 2: Using Excel</strong></p>
+<p>The probability \(P(X=3)\) can also be found by using the Excel function <code>BINOM.DIST(3, 5, 1 / 4, FALSE)</code>.</p>
+<hr />
+<h2 id="sec:example-multiple-cards-drawing-2-of-2"><span class="section-number main-number">15</span> Example: Multiple Cards Drawing (2 of 2)</h2>
+<p>To probability of getting at least \(3\) club is
+$$\textstyle P(X\geq 3) =1-P(X\leq 2)=1-(P(0)+P(1)+P(2))\approx 1-0.8965=0.1035.$$
+To calculate \(P(X\leq 2)\), there are two methods.</p>
+<p><strong>Method 1:</strong> In Excel, \(P(X\le 2)\) <code>=BINOM.DIST(2,5,0.25,TRUE)</code> \(\approx 0.8965\).</p>
+<p><strong>Method 2:</strong> Use the binomial distribution table for \(n=5\) and \(p=0.25\).</p>
+<div class="center" style="margin-top: -0.2em; font-size: 0.9em;">
+<p>Binomial Probability Table <em>n=5</em></p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>x</th>
+<th>0.1</th>
+<th>0.15</th>
+<th>0.2</th>
+<th>0.25</th>
+<th>0.3</th>
+<th>0.35</th>
+<th>0.4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>0</td>
+<td>0.5905</td>
+<td>0.4437</td>
+<td>0.3277</td>
+<td><span class="red">0.2373</span></td>
+<td>0.1681</td>
+<td>0.116</td>
+<td>0.0778</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>0.3281</td>
+<td>0.3915</td>
+<td>0.4096</td>
+<td><span class="red">0.3955</span></td>
+<td>0.3602</td>
+<td>0.3124</td>
+<td>0.2592</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>0.0729</td>
+<td>0.1382</td>
+<td>0.2048</td>
+<td><span class="red">0.2637</span></td>
+<td>0.3087</td>
+<td>0.3364</td>
+<td>0.3456</td>
+</tr>
+</tbody>
+</table>
+<!-- | 5    | 3    | 0.0081 | 0.0244 | 0.0512 | 0.0879 | 0.1323 | 0.1811 | 0.2304 | -->
+</div>
+<p>\(P(X\le 2) \approx 0.2373+0.3955+0.2637= 0.8965.\)</p>
+<hr />
+<h2 id="sec:practice-binomial-distribution" class="unnumbered">Practice: Binomial Distribution</h2>
+<p>Let \(X\) be a binomial random variable with parameters \(n = 5\), \(p=0.2\). Find the probabilities</p>
+<ol>
+<li>\(P(X=3),\)</li>
+<li>\(P(X&lt;3),\)</li>
+<li>\(P(X&gt;3).\)</li>
+</ol>
+<hr />
+<h2 id="sec:practice-machine-defect-rate" class="unnumbered">Practice: Machine Defect Rate</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7211&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
+</div>
+<hr />
+<h2 id="sec:mean-and-sd-of-binomial-distribution-4-5"><span class="section-number main-number">16</span> Mean and SD of Binomial Distribution (4/5)</h2>
+<ul>
+<li>
+<p>The mean of a binomial distribution of \(n\) trials is $$\mu =\sum \Big[xP(X=x)\Big]=\sum \left[x\cdot \dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\right] = np.$$</p>
+</li>
+<li>
+<p>The variance of a binomial distribution of \(n\) trials is $$\sigma^2 =\sum \Big[(x-np)^2P(X=x)\Big]=\sum \Big[x^2P(X=x)-(np)^2\Big]=np(1-p).$$</p>
+</li>
+<li>
+<p>The standard deviation of a binomial distribution of \(n\) trials is $$\sigma=\sqrt{np(1-p)}.$$</p>
+</li>
+<li>
+<p>We consider an event \(E\) <strong>unusual</strong> if the probability \(P(E)\leq 5\%\).</p>
+</li>
+</ul>
+<div class="footmark">
+<p><strong>Remark:</strong> \(\sum \left[x\cdot \dfrac{n!}{(n-x)!x!}p^x(1-p)^{n-x}\right] = np\cdot\sum \left[\dfrac{(n-1)!}{(n-x)!(x-1)!}p^{x-1}(1-p)^{n-x}\right] = np \cdot (p+(1-p))^{n-1} =np.\)</p>
+</div>
+<hr />
+<h2 id="sec:example-expected-value-and-sd-of-cracked-eggs"><span class="section-number main-number">17</span> Example: Expected Value and SD of Cracked Eggs</h2>
+<p>The probability that an egg in a retail package is cracked or broken is 0.02.</p>
+<ol>
+<li>Find the average number of cracked or broken eggs in a one dozen carton.</li>
+<li>Find the standard deviation.</li>
+<li>Is getting at least two broken eggs unusual?</li>
+</ol>
+<p><strong>Solution:</strong> Since there are 12 eggs and the chance of getting a cracked egg is 0.02, the average number of cracked is
+\(\mu =np=12\cdot 0.02=0.24.\)</p>
+<p>The standard deviation is \(\sigma=\sqrt{12\cdot 0.02\cdot(1-0.02)}\approx 0.4850.\)</p>
+<p>Recall the Empirical rule: 95% data are within 2 standard deviation away from the mean. Since \(2&gt;0.24+2\cdot 0.4850\), the chance of getting at least two cracked eggs is less than 5%, which is considered as unusual.</p>
+<p>Note that the probability of getting at least two cracked eggs is \(P(X\geq 2)=1-P(X\leq 1)=\) <code>1-BINOM.DIST(1, 12, 0.02, TRUE)</code> \(\approx 0.9768922\).</p>
+<hr />
+<h2 id="sec:practice-quality-of-grapefruit" class="unnumbered">Practice: Quality of Grapefruit</h2>
+<p>Adverse growing conditions have caused 5% of grapefruit grown in a certain region to be of inferior quality. Grapefruit are sold by the dozen.</p>
+<ol>
+<li>
+<p>Find the average number of inferior quality grapefruit per box of a dozen.</p>
+</li>
+<li>
+<p>A box that contains two or more grapefruit of inferior quality will cause a strong adverse customer reaction. Find the probability that a box of one dozen grapefruit will contain two or more grapefruit of inferior quality.</p>
 </li>
 </ol>
 <hr />
-<h2 id="sec:example-birth-gender-prediction-2-of-3"><span class="section-number main-number">16</span> Example: Birth Gender Prediction (2 of 3)</h2>
-<p><strong>Solution:</strong></p>
-<p>Assume that we have ultrasound predictions for 1,000 random babies.</p>
-<ul>
-<li>
-<p>Fact 1 means that \(P(\text{Girl})=48\%\).</p>
-</li>
-<li>
-<p>Fact 2 means that \(P(\text{Predicted as girl}|\text{Girl})=9 /10\).</p>
-</li>
-<li>
-<p>Fact 3 means that \(P(\text{Predicted as boy}|\text{Boy})=3 /4\)</p>
-</li>
-</ul>
-<p>Using those facts, we may create a two-way frequency table.</p>
-<hr />
-<h2 id="sec:example-birth-gender-prediction-3-of-3"><span class="section-number main-number">17</span> Example: Birth Gender Prediction (3 of 3)</h2>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">Girl</th>
-<th align="center">Boy</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Predict Girl</td>
-<td align="center">\(480\cdot\frac{9}{10}= 432\)</td>
-<td align="center">\(520-390 = 130\)</td>
-<td align="center">\(432+130=562\)</td>
-</tr>
-<tr>
-<td align="left">Predict Boy</td>
-<td align="center">\(480-432=48\)</td>
-<td align="center">\(520\cdot\frac34=390\)</td>
-<td align="center">\(48+390=438\)</td>
-</tr>
-<tr>
-<td align="left">Column   Totals</td>
-<td align="center">\(48\%\cdot 1000=480\)</td>
-<td align="center">\(1000-480=520\)</td>
-<td align="center">\(1,000\)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>If the examination predicts a girl, the probability that the born baby is a girl is
-$$P(\text{Girl}|\text{predict girl})=\frac{432}{562} \approx 0.769=76.9\%.$$</p>
-<p>If the examination predicts a boy, the probability that the born baby is a boy is
-$$P(\text{Boy} | \text{predict boy}) = \frac{390}{438} \approx 0.890=89\%.$$</p>
-<hr />
-<h2 id="sec:practice-highway-safty" class="unnumbered">Practice: Highway Safty</h2>
-<p>The table below is based on a 1988 study of accident records conducted by the Florida State Department of Highway Safety.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center"><strong>Nonfatal</strong></th>
-<th align="center"><strong>Fatal</strong></th>
-<th align="center"><strong>Row Totals</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><strong>Seat Belt</strong></td>
-<td align="center">412,368</td>
-<td align="center">510</td>
-<td align="center">412,878</td>
-</tr>
-<tr>
-<td align="left"><strong>No Seat Belt</strong></td>
-<td align="center">162,527</td>
-<td align="center">1,601</td>
-<td align="center">164,128</td>
-</tr>
-<tr>
-<td align="left"><strong>Column Totals</strong></td>
-<td align="center">574,895</td>
-<td align="center">2,111</td>
-<td align="center">577,006</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><em>Does wearing a seat belt lower the risk of an accident resulting in a fatality?</em></p>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/two-way-tables-4-of-5/">https://courses.lumenlearning.com/wmopen-concepts-statistics</a></p>
-</div>
-<hr />
-<h2 id="sec:practice-drug-screening" class="unnumbered">Practice: Drug Screening</h2>
-<p>A large company has instituted a mandatory employee drug screening program. Assume that the drug test used is known to be 99% accurate. That is, if an employee is a drug user, the test will come back positive (“drug detected”) 99% of the time. If an employee is a non-drug user, then the test will come back negative (“no drug detected”) 99% of the time. Assume that 2% of the employees of the company are drug users.</p>
-<p>If an employee’s drug test comes back positive, what is the probability that the test is wrong and the employee is in fact a non drug user?</p>
-<div class="footmark">
-<p>Source: <a href="https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/two-way-tables-5-of-5/">https://courses.lumenlearning.com/wmopen-concepts-statistics</a></p>
+<h2 id="sec:practice-mean-and-sd-of-a-binomial-distribution" class="unnumbered">Practice: Mean and SD of a Binomial Distribution</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=916606&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
 </div>
 <hr />
 <!--# class="middle center" -->
 <div class="part">
-<p>Lab Instruction in Excel</p>
+<p>Extra Practice</p>
 </div>
 <hr />
-<h2 id="sec:create-stacked-bar-chart"><span class="section-number main-number">18</span> Create Stacked Bar Chart</h2>
-<ul>
-<li>
-<p>To create a a stacked bar chart of a two-way table</p>
-<ul>
-<li>
-<p>First select the data table.</p>
-</li>
-<li>
-<p>Look for and click <code>Insert Column or Bar Chart</code> in the menu <code>Insert</code>-&gt; <code>Charts</code>.</p>
-</li>
-<li>
-<p>In the dropdown menu, choose the third option in 2-D Column (<code>100% Stacked Column</code>) or the third option 2-D Bar (<code>100% Stacked Bar</code>).</p>
-</li>
-<li>
-<p>To switch row/column, in the output graph, right click the row axis or the column axis, and chose the option <code>Select Data...</code> to make a switch.</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="sec:lab-practice-gender-vs-program-selection" class="unnumbered">Lab Practice: Gender vs Program Selection</h2>
-<p>The following table summarize results from a study on program selection and gender.</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">Arts-Sci</th>
-<th align="center">Bus-Econ</th>
-<th align="center">Info Tech</th>
-<th align="center">Health Science</th>
-<th align="center">Graphics Design</th>
-<th align="center">Culinary Arts</th>
-<th align="center">Row Totals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Female</td>
-<td align="center">4,660</td>
-<td align="center">435</td>
-<td align="center">494</td>
-<td align="center">421</td>
-<td align="center">105</td>
-<td align="center">83</td>
-<td align="center">6,198</td>
-</tr>
-<tr>
-<td align="left">Male</td>
-<td align="center">4,334</td>
-<td align="center">490</td>
-<td align="center">564</td>
-<td align="center">223</td>
-<td align="center">97</td>
-<td align="center">94</td>
-<td align="center">5,802</td>
-</tr>
-<tr>
-<td align="left">Column Totals</td>
-<td align="center">8,994</td>
-<td align="center">925</td>
-<td align="center">1,058</td>
-<td align="center">644</td>
-<td align="center">202</td>
-<td align="center">177</td>
-<td align="center">12,000</td>
-</tr>
-</tbody>
-</table>
+<h2 id="sec:practice-mean-of-a-discrete-variable" class="unnumbered">Practice: Mean of a Discrete Variable</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7197&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
 </div>
-<p>Use Excel to answer the following question about the study.</p>
-<ul>
-<li>
-<p>Is there an association between gender and program selection? Why or why not?</p>
-</li>
-<li>
-<p>If they are associated, is the association strong or week?</p>
-</li>
-</ul>
+<hr />
+<h2 id="sec:practice-sd-of-a-discrete-variable" class="unnumbered">Practice: SD of a Discrete Variable</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7198&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
+</div>
+<hr />
+<h2 id="sec:practice-probability-within-one-sd" class="unnumbered">Practice: Probability within One SD</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=14762&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
+</div>
+<hr />
+<h2 id="sec:practice-probability-from-a-poll" class="unnumbered">Practice: Probability from a Poll</h2>
+<div class="iframecontainer">
+<iframe src="https://www.myopenmath.com/embedq2.php?id=7210&amp;seed=2020&amp;showansafter" width="100%" height="560px" data-external="1"></iframe>
+</div>
+<hr />
+<!--# class="middle center" -->
+<div class="part">
+<p>Lab Instructions in Excel</p>
+</div>
+<hr />
+<h2 id="sec:excel-functions-for-binomial"><span class="section-number main-number">18</span> Excel Functions for Binomial</h2>
+<p>Let \(X\) be a binomial random variable with parameters \(n\) and \(p\), that is \(X\sim B(n, p)\). In Excel, \(P(X=x)\) is given by <code>BINOM.DIST(x, n, p, FALSE)</code> and \(P(X\le x)\) is given by <code>BINOM.DIST(x, n, p, TRUE)</code>. You may click input function \(f_x\) and then search <code>binom</code> to find the function.</p>
+<hr />
+<h2 id="sec:lab-practice-binominal-distribution-table" class="unnumbered">Lab Practice: Binominal Distribution Table</h2>
+<p>Create a binomial distribution table for \(p=0.5\) and \(n=10\). (See <a href="tables/Binomial-Distribution.pdf">the linked PDF for example</a>)</p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.24/js/snap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils@1.14.24/js/key-buttons.min.js,npm/@xiee/utils@1.14.24/js/external-link.min.js,npm/@xiee/utils@1.14.24/js/heading-anchor.min.js" defer></script>
