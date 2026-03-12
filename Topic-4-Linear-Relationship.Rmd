@@ -348,6 +348,8 @@ For the scatterplots in the previous slides, we see that
 
 One idea of using product is from the geometric interpretation of $\mathbf{u}\cdot\mathbf{v}=\lVert \mathbf{u}\rVert\lVert\mathbf{v}\rVert\cos\theta$. There are also other interpretations of $r$.
 
+Another reason of using product will be clear after we discuss the product rule of probability. If two variable $X$ and $Y$ are independent, then $E(XY)=E(X)E(Y)$, which is the basis of the definition of covariance and correlation.
+
 ---
 
 ## Properties
@@ -402,8 +404,17 @@ ggplot(gradebook[20:30,c("Midterm1", "Final")], aes(x=Midterm1, y=Final)) +
   theme_bw()
 ```
 
-Using the Excel function `CORREL(x, y)`, we find the correlation coefficient is
-$r=`r format(round(cor(gradebook[20:30,c("Midterm1", "Final")]$Midterm1, gradebook[20:30,c("Midterm1", "Final")]$Final, method="pearson"), 3), nsmall=3)`$ .
+```{r cor_grade_calc, echo=FALSE}
+if(!exists("gradebook")) {
+  load("Data-Frames-SUNY-Concepts-in-Statistics/gradebook.RData")
+  gradebook <- rename(data)
+}
+cor_example <- round(cor(gradebook[20:30,"Midterm1"], gradebook[20:30,"Final"], use = "complete.obs"), 3)
+```
+
+```{r print_cor, echo=FALSE, results='asis'}
+cat(sprintf("Using the Excel function `CORREL(x, y)`, we find the correlation coefficient is $r=%.3f$.", cor_example))
+```
 
 The $r$-value shows a **strong positive linear** relationship.
 
@@ -657,8 +668,7 @@ Find the standard error and coefficient of determination for the data of midterm
 **Solution:**
 ```{r, lm_grade, include=FALSE}
 load("Data-Frames-SUNY-Concepts-in-Statistics/gradebook.rdata")
-gradebook <- rename(data)
-GradeBook <- gradebook[20:30,c("Midterm1", "Final")]
+GradeBook <- data[20:30,c("Midterm1", "Final")]
 cor_GradeBook=round(cor(GradeBook$Midterm1, GradeBook$Final),digits=3)
 model=lm(formula = Final ~ ., data=GradeBook)
 ```
@@ -694,7 +704,7 @@ kable(GradeBook,
 <iframe src="https://www.myopenmath.com/embedq2.php?id=905035&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 905035"></iframe>
 :::
 
----
+<!-- ---
 
 ## References {.unnumbered}
 
@@ -708,7 +718,7 @@ kable(GradeBook,
 
 - Joseph Lee Rodgers; W. Alan Nicewander. Thirteen Ways to Look at the Correlation Coefficient <https://www.stat.berkeley.edu/~rabbee/correlation.pdf>.
 
-- Matthew Gunn (<https://stats.stackexchange.com/users/97925/matthew-gunn>), How can the regression error term ever be correlated with the explanatory variables?
+- Matthew Gunn (<https://stats.stackexchange.com/users/97925/matthew-gunn>), How can the regression error term ever be correlated with the explanatory variables? -->
 
 ---
 
