@@ -260,8 +260,10 @@ Source: [Scatterplots 2 of 5 in Concepts of Statistics](https://courses.lumenlea
 ## The Correlation Coefficient
 
 The **correlation coefficient** $r$ is a numeric measure that measures the strength and direction of a linear relationship between two quantitative variables. One definition is the mean product of standard values.
-$$r=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{\sqrt{\sum\left(\frac{x-\bar{x}}{s_x}\right)^2}\cdot\sqrt{\left(\frac{y-\bar{y}}{s_y}\right)^2}}=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{n-1},$$
+$$=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{n-1}r=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{\sqrt{\sum\left(\frac{x-\bar{x}}{s_x}\right)^2}\cdot\sqrt{\left(\frac{y-\bar{y}}{s_y}\right)^2}},$$
 where $n$ is the sample size, $x$ is a data value for the explanatory variable, $\bar{x}$ is the mean of the $x$-values, $s_x$ is the standard deviation of the $x$-values, and similarly, for the notations involving $y$.
+
+One reason to use the mean product is that if $x$ and $y$ are independent the produdct of mean and the mean of product should be the same.
 
 ::: {.footmark}
 See the paper [Thirteen Ways to Look at the Correlation Coefficient](https://www.stat.berkeley.edu/~rabbee/correlation.pdf) for other definitions.
@@ -375,7 +377,7 @@ After discussing regression lines, you will see why $r^2\le 1$ and $r$ measures 
 ## Practice: Guess the Correlation Coefficient {.unnumbered}
 
 ::: {.iframecontainer}
-<iframe src="https://istats.shinyapps.io/guesscorr/" width="100%" height="80%" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://istats.shinyapps.io/guesscorr/" width="100%" height=550px loading="lazy" allowfullscreen></iframe>
 :::
 
 ::: {.footmark}
@@ -503,7 +505,7 @@ Source: [Causation and Lurking Variables in Concepts in Statistics for more exam
 ## Practice: Lurking Variable {.unnumbered}
 
 ::: {.iframecontainer}
-<iframe src="https://www.myopenmath.com/embedq2.php?id=584887&seed=2020&showansafter" width="100%" loading="lazy" allowfullscreen title="MyOpenMath question 584887"></iframe>
+<iframe src="https://www.myopenmath.com/embedq2.php?id=584887&seed=2020&showansafter" width="100%" height = 400px loading="lazy" allowfullscreen title="MyOpenMath question 584887"></iframe>
 :::
 
 ---
@@ -516,6 +518,7 @@ Source: [Causation and Lurking Variables in Concepts in Statistics for more exam
   $$\hat{y}=m(x-\bar{x})+\bar{y}=m x+b,$$
   where the slope is $m=\frac{\sum(x-\bar{x})(y-\bar{y})}{\sum(x-\bar{x})^2}=r\frac{s_y}{s_x}$ and the $y$-intercept is
   $b=\bar{y}-m\bar{x}.$
+- For a given $x$-value, the predicted value is $\hat{y}$ calculated from the regression line.
 - The **residual** is $\text{Residual}=\text{Observed}-\text{Predicted}=y-\hat{y}.$
 - A prediction beyond the range of the data is called **extrapolation**.
 
@@ -616,13 +619,18 @@ Image source: [Figure 5.14 in Introduction to Statistics and Data Analysis](http
 
 ## Coefficient of Determination
 
-**Coefficient of determination** measures the proportion of variability in the response variable $y$ that can be attributed to the linear regression line (a nice explanation can be found in [Explaining The Variance of a Regression Model](https://stats.stackexchange.com/q/203675)).
+**Coefficient of determination** measures the proportion of variability in the response variable $y$ that can be attributed to the linear regression line. 
+<!-- (a nice explanation can be found in [Explaining The Variance of a Regression Model](https://stats.stackexchange.com/q/203675)). -->
   
 - The total variance of $y$ is the sum of square deviations $SS_{tot}=\sum(y-\bar{y})^2=(n-1)s_y^2$.
 
 - The total variance of predicted $y$ is $SS_{reg}=\sum(\hat{y}-\bar{y})^2=(n-1)r^2s_y^2$.
 
-- The **coefficient of determination** is $$\dfrac{SS_{reg}}{SS_{tot}}=\dfrac{(n-1)r^2s_y^2}{(n-1)s_y^2}=r^2.$$
+- The **coefficient of determination** is $$\dfrac{SS_{reg}}{SS_{tot}}=r^2=\frac{\sum(\hat{y} - \bar{y})^2}{\sum(y - \hat{y} + \hat{y} -\bar{y})^2} = \frac{\sum(\hat{y} - \bar{y})^2}{\sum(y - \hat{y})^2 + \sum(\hat{y} -\bar{y})^2} \le 1 .$$ Because
+  $$\sum((y-\hat{y})(\hat{y}-\bar{y})) = \sum (y-\bar{y} - \frac{r s_y}{s_x}(x - \bar{x}))(\frac{r s_y}{s_x} (x - \bar{x})) = 0.$$ 
+ <!-- = r\cdot \frac{s_y}{s_x}\sum((y-\bar{y})(x-\bar{x})) - r^2\cdot\frac{s_y^2}{s_x^2}\cdot(n-1)s_x^2 = 0. -->
+
+
 
 ::: {.footmark}
 A visualization by Magnusson, K. can be found at <https://rpsychologist.com/correlation/>.
@@ -634,7 +642,7 @@ A visualization by Magnusson, K. can be found at <https://rpsychologist.com/corr
 
 - The $r$ in the coefficient of determination is the correlation coefficient. Equivalently, $r=\pm\sqrt{r^2}$.
 
-- The smaller the standard error, the larger the coefficient of determination: $r^2=1-\dfrac{SS_{res}}{SS_{tot}}=1-\dfrac{(n-2)s_e^2}{SS_{tot}}$.
+- The smaller the standard error, the larger the coefficient of determination: $$r^2=1-\dfrac{SS_{res}}{SS_{tot}}=1-\dfrac{(n-2)s_e^2}{SS_{tot}}.$$
 
 - $n−2$ is the degrees of freedom. We lose two degrees of freedom because both the slope and the $y$-intercept are estimated.
 
