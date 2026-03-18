@@ -260,7 +260,7 @@ Source: [Scatterplots 2 of 5 in Concepts of Statistics](https://courses.lumenlea
 ## The Correlation Coefficient
 
 The **correlation coefficient** $r$ is a numeric measure that measures the strength and direction of a linear relationship between two quantitative variables. One definition is the mean product of standard values.
-$$=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{n-1}r=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{\sqrt{\sum\left(\frac{x-\bar{x}}{s_x}\right)^2}\cdot\sqrt{\left(\frac{y-\bar{y}}{s_y}\right)^2}},$$
+$$r=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{n-1}=\dfrac{\sum\left(\frac{x-\bar{x}}{s_x}\right)\left(\frac{y-\bar{y}}{s_y}\right)}{\sqrt{\sum\left(\frac{x-\bar{x}}{s_x}\right)^2}\cdot\sqrt{\left(\frac{y-\bar{y}}{s_y}\right)^2}},$$
 where $n$ is the sample size, $x$ is a data value for the explanatory variable, $\bar{x}$ is the mean of the $x$-values, $s_x$ is the standard deviation of the $x$-values, and similarly, for the notations involving $y$.
 
 One reason to use the mean product is that if $x$ and $y$ are independent the produdct of mean and the mean of product should be the same.
@@ -529,7 +529,7 @@ Source: [Causation and Lurking Variables in Concepts in Statistics for more exam
   $$\hat{y}=m(x-\bar{x})+\bar{y}=m x+b,$$
   where the slope is $m=\frac{\sum(x-\bar{x})(y-\bar{y})}{\sum(x-\bar{x})^2}=r\frac{s_y}{s_x}$ and the $y$-intercept is
   $b=\bar{y}-m\bar{x}.$
-- For a given $x$-value, the predicted value is $\hat{y}$ calculated from the regression line.
+- For a given $x$-value, the **predicted value** is $\hat{y}$ calculated from the regression line.
 - The **residual** is $\text{Residual}=\text{Observed}-\text{Predicted}=y-\hat{y}.$
 - A prediction beyond the range of the data is called **extrapolation**.
 

@@ -449,6 +449,8 @@ $P(\text{heart or face})=P(\text{heart})+P(\text{face})-P(\text{heart and face})
 
 - **Fundamental Counting Principle:** if there are $m$ ways of doing something and $n$ ways of doing another thing independently, then there are $m\cdot n$ ways of performing both actions *in order*.
 
+
+
 ::: {.footmark}
 
 See <https://online.stat.psu.edu/stat414/lesson/3> for more information and examples on counting technique.

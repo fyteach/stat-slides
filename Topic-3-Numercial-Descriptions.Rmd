@@ -281,7 +281,13 @@ irisPL
   where $n$ is the sample size.
 - **Rounding rule:** for mean, variance and standard deviation, we keep at least one more digit than the accuracy of the data set.
 
+::: {.remark}
+One reason of dividing $n-1$ instead of $n$ is that we want the mean of sample variance $s^2$ is the same as the population variance.
+:::
+
 **Note:** To measure the spread, one may also use the **mean absolute deviation** $MAD=\dfrac{\sum |x-\bar{x}|}{n}$. However, the standard deviation has better properties in applications.
+
+
 
 ---
 
