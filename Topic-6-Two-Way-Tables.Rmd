@@ -176,11 +176,13 @@ Source: https://courses.lumenlearning.com/introstats1/chapter/contingency-tables
 
 - To understand association between categorical variables, we may think conversely. How do we test no association?
 
+- Two variables $X$ and $Y$ are **independent** if $P(X~\text{and}~Y)=P(X)\cdot P(Y)$. Equivalently, $P(X|Y)=P(X)$ and $P(Y|X)=P(Y)$.
+
 - If the conditional probabilities are nearly equal for all categories, there may be no association between the variables. Conversely, if the conditional probabilities are different enough, we are confidence to say there is an association.
   
 - In general, the bigger the differences in the conditional probabilities, the stronger the association between the variables.
 
-- Two variables $X$ and $Y$ are **independent** if $P(X~\text{and}~Y)=P(X)\cdot P(Y)$. Equivalently, $P(X|Y)=P(X)$ and $P(Y|X)=P(Y)$.
+- To quantify these differences objectively, we use a statistic based on how far observed proportions deviate from what independence predicts. Numerically, association can be measured by the normalized sum of squared standardized residuals: where larger values indicate stronger association (for more information, see <https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_V>).
 
 ---
 

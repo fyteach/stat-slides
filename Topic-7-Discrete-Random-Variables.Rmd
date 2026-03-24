@@ -122,9 +122,9 @@ $$P(X\leq 2)= P(X=0)+P(X=1)+P(X=2)=0.25+0.5+0.25=1.$$
 
 ---
 
-## Example: Histogram of an Unfair Coin
+## Example: Histogram of Two Unfair Coins
 
-The probability distribution of an unfair coin is characterized by the following histogram. Find the probability of getting at most 1 head.
+The probability distribution of tossing two unfair coin is characterized by the following histogram. Find the probability of getting at most 1 head.
 ::: {.center}
 
 ```{r hist_unfair_coin, echo=FALSE, fig.height = 1.5, fig.width = 3, out.width = "40%", fig.cap = "", dpi = 100}

@@ -136,14 +136,14 @@ Image source: [Concepts in Statistics (lumen learning)](https://courses.lumenlea
 
 ## Type of Variables
 
-- **Variable:** a characteristic, or attribute of interest that we gather about individuals or objects. There are two types of variables according to their values.
+- **Variable:** a characteristic or attribute of interest measured on individuals or objects. Variables are commonly classified by the type of values they take:
   
-  - **Categorical variables** (or qualitative variables) represent attributes, labels or nonnumerical entries, such as names, and colors.
-  - **Numerical variables** (or quantitative variables) represent numerical measurements or counts, such as weights and number of students in each class.
+  - **Categorical variables** (or qualitative variables) represent attributes, labels or nonnumerical entries, such as names, and colors. Differences or ratios are not meaningful.
+  - **Numerical variables** (or quantitative variables) represent numerical measurements or counts, such as weights and number of students in each class. Differences and ratios must be meaningful.
 
 - **Univariate data:** a collection of observations on a single variable.
-- **Bivariate data:** a collection of pairs of numbers.
-- **Multivariate data:** a collection of arrays of values of two or more variables.
+- **Bivariate data:** a collection of paired observations of two variables.
+- **Multivariate data:** a collection of observations on three or more variables.
 
 - A numerical variable is called a **discrete variable** if its values are countable. It is called a **continuous variable** if it can take all values in certain intervals.
 
